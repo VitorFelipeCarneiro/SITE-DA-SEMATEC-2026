@@ -71,3 +71,48 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
   });
 });
+
+// ── Hero cube: self-assembling fractal cube ──
+const cubeRig = $('cubeRig');
+if (cubeRig) {
+  const GRID = 3;
+  const STEP = 48;
+  const FACES = ['front', 'back', 'right', 'left', 'top', 'bottom'];
+  const CENTER = (GRID - 1) / 2;
+
+  for (let x = 0; x < GRID; x++) {
+    for (let y = 0; y < GRID; y++) {
+      for (let z = 0; z < GRID; z++) {
+        if (x === CENTER && y === CENTER && z === CENTER) continue;
+
+        const dx = x - CENTER, dy = y - CENTER, dz = z - CENTER;
+        const mag = Math.sqrt(dx * dx + dy * dy + dz * dz) || 1;
+        const explode = 30 + Math.random() * 26;
+
+        const gx = dx * STEP, gy = dy * STEP, gz = dz * STEP;
+        const ex = gx + (dx / mag) * explode;
+        const ey = gy + (dy / mag) * explode;
+        const ez = gz + (dz / mag) * explode;
+
+        const cubelet = document.createElement('div');
+        cubelet.className = 'cubelet';
+        cubelet.style.setProperty('--gx', gx + 'px');
+        cubelet.style.setProperty('--gy', gy + 'px');
+        cubelet.style.setProperty('--gz', gz + 'px');
+        cubelet.style.setProperty('--ex', ex + 'px');
+        cubelet.style.setProperty('--ey', ey + 'px');
+        cubelet.style.setProperty('--ez', ez + 'px');
+        cubelet.style.animationDelay = (Math.random() * 6).toFixed(2) + 's';
+        cubelet.style.animationDuration = (5 + Math.random() * 4).toFixed(2) + 's';
+
+        FACES.forEach(face => {
+          const faceEl = document.createElement('div');
+          faceEl.className = 'cubelet-face ' + face;
+          cubelet.appendChild(faceEl);
+        });
+
+        cubeRig.appendChild(cubelet);
+      }
+    }
+  }
+}
