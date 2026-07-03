@@ -13,6 +13,48 @@ if (inscricoesSection && localSection) {
   if (localIsBeforeInscricoes) inscricoesSection.after(localSection);
 }
 
+// ── Hero: slideshow de vídeos em crossfade ──
+const heroStage = document.querySelector('.hero-video-stage');
+if (heroStage) {
+  const slides = Array.from(heroStage.querySelectorAll('video'));
+  const playlist = [
+    'video/hero-bg.mp4',
+    'video/corn-field.mp4',
+    'video/greenhouse-lab.mp4',
+    'video/wind-turbines.mp4',
+    'video/biotech-lab.mp4',
+    'video/solar-farm.mp4',
+    'video/textile-factory.mp4'
+  ];
+
+  const setSource = (videoEl, src) => {
+    const source = videoEl.querySelector('source');
+    if (source.getAttribute('src') === src) return;
+    source.setAttribute('src', src);
+    videoEl.load();
+    videoEl.play().catch(() => {});
+  };
+
+  let activeSlot = 0;
+  let nextIndex = 1 % playlist.length;
+  setSource(slides[1], playlist[nextIndex]);
+
+  const advanceSlide = () => {
+    const idleSlot = activeSlot === 0 ? 1 : 0;
+    slides[idleSlot].classList.add('is-active');
+    slides[activeSlot].classList.remove('is-active');
+    activeSlot = idleSlot;
+
+    nextIndex = (nextIndex + 1) % playlist.length;
+    const slotToPreload = activeSlot === 0 ? 1 : 0;
+    setTimeout(() => setSource(slides[slotToPreload], playlist[nextIndex]), 1500);
+  };
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setInterval(advanceSlide, 7000);
+  }
+}
+
 // ── Navbar scroll ──
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -59,6 +101,50 @@ $$('.stab').forEach(btn => {
   });
 });
 
+// ── Carrossel de palestras em destaque ──
+const talkCarousel = document.querySelector('.talk-carousel');
+if (talkCarousel) {
+  const talkSlides = Array.from(talkCarousel.querySelectorAll('.talk-slide'));
+  const talkDots = Array.from(talkCarousel.querySelectorAll('[data-talk-slide]'));
+  const talkArrows = Array.from(talkCarousel.querySelectorAll('[data-talk-dir]'));
+  let activeTalk = Math.max(0, talkSlides.findIndex(slide => slide.classList.contains('is-active')));
+  let talkTimer = null;
+
+  const showTalk = index => {
+    if (!talkSlides.length) return;
+    activeTalk = (index + talkSlides.length) % talkSlides.length;
+    talkSlides.forEach((slide, slideIndex) => {
+      slide.classList.toggle('is-active', slideIndex === activeTalk);
+    });
+    talkDots.forEach((dot, dotIndex) => {
+      dot.classList.toggle('is-active', dotIndex === activeTalk);
+    });
+  };
+
+  const startTalkTimer = () => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    window.clearInterval(talkTimer);
+    talkTimer = window.setInterval(() => showTalk(activeTalk + 1), 5200);
+  };
+
+  talkDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      showTalk(Number(dot.dataset.talkSlide));
+      startTalkTimer();
+    });
+  });
+
+  talkArrows.forEach(arrow => {
+    arrow.addEventListener('click', () => {
+      showTalk(activeTalk + Number(arrow.dataset.talkDir));
+      startTalkTimer();
+    });
+  });
+
+  showTalk(activeTalk);
+  startTalkTimer();
+}
+
 // ── Smooth scroll offset ──
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
@@ -72,47 +158,92 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// ── Hero cube: self-assembling fractal cube ──
-const cubeRig = $('cubeRig');
-if (cubeRig) {
-  const GRID = 3;
-  const STEP = 48;
-  const FACES = ['front', 'back', 'right', 'left', 'top', 'bottom'];
-  const CENTER = (GRID - 1) / 2;
+// ── Hero living hill scene ──
+const hero = $('hero');
+const heroGrass = $('heroGrass');
+const heroFlowers = $('heroFlowers');
+const heroButterflies = $('heroButterflies');
 
-  for (let x = 0; x < GRID; x++) {
-    for (let y = 0; y < GRID; y++) {
-      for (let z = 0; z < GRID; z++) {
-        if (x === CENTER && y === CENTER && z === CENTER) continue;
+if (hero && heroGrass && heroFlowers && heroButterflies) {
+  let seed = 2026;
+  const random = () => {
+    seed = (seed * 1664525 + 1013904223) % 4294967296;
+    return seed / 4294967296;
+  };
 
-        const dx = x - CENTER, dy = y - CENTER, dz = z - CENTER;
-        const mag = Math.sqrt(dx * dx + dy * dy + dz * dz) || 1;
-        const explode = 30 + Math.random() * 26;
+  const buildBlade = index => {
+    const blade = document.createElement('span');
+    blade.className = 'grass-blade';
+    blade.style.setProperty('--x', (random() * 100).toFixed(2) + '%');
+    blade.style.setProperty('--h', (24 + random() * 64).toFixed(1) + 'px');
+    blade.style.setProperty('--w', (1.2 + random() * 2.4).toFixed(2) + 'px');
+    blade.style.setProperty('--lean', (-10 + random() * 20).toFixed(2) + 'deg');
+    blade.style.setProperty('--delay', (-random() * 5).toFixed(2) + 's');
+    blade.style.setProperty('--dur', (2.8 + random() * 3.8).toFixed(2) + 's');
+    blade.style.setProperty('--shade', index % 3);
+    return blade;
+  };
 
-        const gx = dx * STEP, gy = dy * STEP, gz = dz * STEP;
-        const ex = gx + (dx / mag) * explode;
-        const ey = gy + (dy / mag) * explode;
-        const ez = gz + (dz / mag) * explode;
+  const buildFlower = () => {
+    const flower = document.createElement('span');
+    flower.className = 'hero-flower';
+    flower.style.setProperty('--x', (4 + random() * 92).toFixed(2) + '%');
+    flower.style.setProperty('--y', (4 + random() * 42).toFixed(2) + '%');
+    flower.style.setProperty('--s', (0.62 + random() * 0.72).toFixed(2));
+    flower.style.setProperty('--delay', (-random() * 6).toFixed(2) + 's');
+    flower.style.setProperty('--dur', (3 + random() * 4).toFixed(2) + 's');
+    flower.style.setProperty('--hue', Math.floor(random() * 4));
+    return flower;
+  };
 
-        const cubelet = document.createElement('div');
-        cubelet.className = 'cubelet';
-        cubelet.style.setProperty('--gx', gx + 'px');
-        cubelet.style.setProperty('--gy', gy + 'px');
-        cubelet.style.setProperty('--gz', gz + 'px');
-        cubelet.style.setProperty('--ex', ex + 'px');
-        cubelet.style.setProperty('--ey', ey + 'px');
-        cubelet.style.setProperty('--ez', ez + 'px');
-        cubelet.style.animationDelay = (Math.random() * 6).toFixed(2) + 's';
-        cubelet.style.animationDuration = (5 + Math.random() * 4).toFixed(2) + 's';
+  const buildButterfly = index => {
+    const butterfly = document.createElement('span');
+    butterfly.className = 'butterfly butterfly-' + (index + 1);
+    butterfly.innerHTML = '<i></i>';
+    butterfly.style.setProperty('--x', (10 + random() * 78).toFixed(2) + '%');
+    butterfly.style.setProperty('--y', (25 + random() * 48).toFixed(2) + '%');
+    butterfly.style.setProperty('--s', (0.62 + random() * 0.9).toFixed(2));
+    butterfly.style.setProperty('--delay', (-random() * 12).toFixed(2) + 's');
+    butterfly.style.setProperty('--dur', (12 + random() * 10).toFixed(2) + 's');
+    butterfly.style.setProperty('--hue', Math.floor(random() * 360));
+    return butterfly;
+  };
 
-        FACES.forEach(face => {
-          const faceEl = document.createElement('div');
-          faceEl.className = 'cubelet-face ' + face;
-          cubelet.appendChild(faceEl);
-        });
-
-        cubeRig.appendChild(cubelet);
-      }
+  const fillLayer = (layer, total, builder) => {
+    layer.textContent = '';
+    const fragment = document.createDocumentFragment();
+    for (let index = 0; index < total; index++) {
+      fragment.appendChild(builder(index));
     }
+    layer.appendChild(fragment);
+  };
+
+  fillLayer(heroGrass, 150, buildBlade);
+  fillLayer(heroFlowers, 42, buildFlower);
+  fillLayer(heroButterflies, 7, buildButterfly);
+}
+
+// ── Nuvem de tópicos viva: flutuação orgânica + palavra em destaque ──
+const topicEls = Array.from($$('.topic'));
+if (topicEls.length) {
+  const spotlight = $('topicSpotlight');
+  if (spotlight && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let lastEl = null;
+    const highlightNext = () => {
+      spotlight.classList.add('is-fading');
+      setTimeout(() => {
+        let next = topicEls[Math.floor(Math.random() * topicEls.length)];
+        while (topicEls.length > 1 && next === lastEl) {
+          next = topicEls[Math.floor(Math.random() * topicEls.length)];
+        }
+        spotlight.textContent = next.textContent;
+        if (lastEl) lastEl.classList.remove('topic-active');
+        next.classList.add('topic-active');
+        lastEl = next;
+        spotlight.classList.remove('is-fading');
+      }, 420);
+    };
+    highlightNext();
+    setInterval(highlightNext, 2600);
   }
 }

@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260702-dark-fixes">
+  <link rel="stylesheet" href="css/style.css?v=20260703-sched-compact">
 </head>
 <body>
 
@@ -22,13 +22,15 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo" aria-label="SEMATEC UFMT 2026">
-        <img class="nav-logo-img" src="img/sematec-logo-dark.png" alt="SEMATEC UFMT 2026">
+        <img class="nav-logo-img" src="img/sematec-logo-light.png" alt="SEMATEC UFMT 2026">
       </a>
       <div class="nav-links" id="navLinks">
         <a href="#sobre">Sobre</a>
         <a href="#atividades">Atividades</a>
         <a href="#programacao">Programação</a>
+        <a href="#palestrantes">Palestras</a>
         <a href="#submissoes">Submissões</a>
+        <a href="#organização">Organização</a>
       </div>
       <button class="nav-burger" id="navBurger" aria-label="Menu">
         <span></span><span></span>
@@ -38,20 +40,21 @@
 
   <!-- ── HERO ── -->
   <section class="hero" id="hero">
-    <div class="hero-media" aria-hidden="true">
-      <div class="cube-scene">
-        <div class="cube-shadow"></div>
-        <div class="cube-float">
-          <div class="cube-rig" id="cubeRig"></div>
-        </div>
-      </div>
+    <div class="hero-video-stage" aria-hidden="true">
+      <video class="hero-video is-active" autoplay muted loop playsinline poster="img/hero-bg-poster.jpg">
+        <source src="video/hero-bg.mp4" type="video/mp4">
+      </video>
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="video/corn-field.mp4" type="video/mp4">
+      </video>
     </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
 
     <div class="hero-body">
       <div class="hero-copy">
         <p class="hero-eyebrow reveal">14-16 Set · UFMT · Cuiabá MT</p>
-        <h1 class="hero-title hero-floating-title reveal r2" aria-label="SEMATEC UFMT 2026">
-          <span>SEMATEC</span><em>UFMT <span class="hero-year">2026</span></em>
+        <h1 class="hero-title reveal r2">
+          SEMATEC<br><em>UFMT <span class="hero-year">2026</span></em>
         </h1>
         <p class="hero-sub reveal r3">
           Semana Acadêmica de Tecnologia, Computação e Inovação com foco em Computação Verde e Tecnologias Inteligentes para um Futuro Sustentável.
@@ -71,102 +74,49 @@
   <!-- ── SOBRE ── -->
   <section class="section about-section" id="sobre">
     <div class="wrap">
-      <header class="about-head reveal">
-        <h2>Sobre a <span>SEMATEC UFMT 2026</span></h2>
-        <p>
-          A SEMATEC UFMT 2026 reúne estudantes, pesquisadores, profissionais e comunidade para discutir como a computação pode acelerar soluções ambientais, formar pessoas e aproximar inovação tecnológica de desafios reais do território.
-        </p>
-        <p>
-          A programação conecta Computação Verde, inteligência artificial, dados, automação, sustentabilidade, inovação e educação tecnológica em uma experiência acadêmica intensa, visualmente contemporânea e aberta à colaboração.
-        </p>
-      </header>
+      <div class="about-showcase">
+        <header class="about-head about-copy reveal">
+          <p class="eyebrow">Sobre</p>
+          <h2>Sobre a <span>SEMATEC UFMT <em>2026</em></span></h2>
+          <p>
+            A SEMATEC UFMT 2026 reúne estudantes, pesquisadores, profissionais e comunidade para discutir como a computação pode acelerar soluções ambientais, formar pessoas e aproximar inovação tecnológica de desafios reais do território.
+          </p>
+          <p>
+            A programação conecta Computação Verde, inteligência artificial, dados, automação, sustentabilidade, inovação e educação tecnológica em uma experiência acadêmica intensa, visualmente contemporânea e aberta à colaboração.
+          </p>
+        </header>
 
-      <div class="focus-carousel reveal r2" aria-label="Destaques da SEMATEC UFMT 2026">
-        <div class="focus-track">
-          <article class="focus-card focus-blue">
-            <span class="focus-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-2.8 7.9-7 10-4.2-2.1-7-5.4-7-10V6l7-3z"/><path d="M9.5 12l1.8 1.8 3.7-4"/></svg>
-            </span>
-            <h3>Computação Verde</h3>
-            <p>Tecnologias, infraestruturas e práticas digitais pensadas para reduzir impacto ambiental.</p>
-          </article>
-          <article class="focus-card focus-pink">
-            <span class="focus-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/><path d="M10 8l5 4-2.4.5 1.4 2.5-1.7 1-1.4-2.5-1.9 1V8z"/></svg>
-            </span>
-            <h3>IA Sustentável</h3>
-            <p>Modelos inteligentes aplicados a energia, clima, educação, gestão e tomada de decisão.</p>
-          </article>
-          <article class="focus-card focus-cyan">
-            <span class="focus-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>
-            </span>
-            <h3>Dados Ambientais</h3>
-            <p>Ciência de dados para monitorar recursos, interpretar cenários e orientar políticas.</p>
-          </article>
-          <article class="focus-card focus-amber">
-            <span class="focus-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 21V9"/><path d="M12 13c-4.2 0-7-2.4-7-6 4.2 0 7 2.4 7 6z"/><path d="M12 11c4.2 0 7-2.4 7-6-4.2 0-7 2.4-7 6z"/><path d="M6 21h12"/></svg>
-            </span>
-            <h3>Tecnologia no Campo</h3>
-            <p>Automação, sensores, IoT e sistemas inteligentes para produção responsável.</p>
-          </article>
-          <article class="focus-card focus-green">
-            <span class="focus-icon" aria-hidden="true">
+        <div class="about-feature-grid reveal r2" aria-label="Eixos temáticos da SEMATEC UFMT 2026">
+          <article class="about-feature-card feature-primary">
+            <span class="about-feature-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M20 4c-8.5.2-14 4.9-14 11a5 5 0 0 0 5 5c6.1 0 9.8-6.5 9-16z"/><path d="M4 20c3.6-5.2 7.4-8.5 12-10"/></svg>
             </span>
             <h3>Meio Ambiente</h3>
-            <p>Computação aplicada ao uso responsável de recursos e ao desenvolvimento regional.</p>
-          </article>
-          <article class="focus-card focus-violet">
-            <span class="focus-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M18 18a4 4 0 0 0 0-8 6 6 0 0 0-11.3-2.2A4.7 4.7 0 0 0 7.5 18H18z"/></svg>
-            </span>
-            <h3>Inovação UFMT</h3>
-            <p>Projetos, pesquisas e conexões entre universidade, setor produtivo e sociedade.</p>
+            <p>Computação aplicada ao uso responsável de recursos e ao desenvolvimento regional focado na preservação dos biomas locais.</p>
           </article>
 
-          <article class="focus-card focus-blue" aria-hidden="true">
-            <span class="focus-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-2.8 7.9-7 10-4.2-2.1-7-5.4-7-10V6l7-3z"/><path d="M9.5 12l1.8 1.8 3.7-4"/></svg>
-            </span>
-            <h3>Computação Verde</h3>
-            <p>Tecnologias, infraestruturas e práticas digitais pensadas para reduzir impacto ambiental.</p>
-          </article>
-          <article class="focus-card focus-pink" aria-hidden="true">
-            <span class="focus-icon">
-              <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/><path d="M10 8l5 4-2.4.5 1.4 2.5-1.7 1-1.4-2.5-1.9 1V8z"/></svg>
-            </span>
-            <h3>IA Sustentável</h3>
-            <p>Modelos inteligentes aplicados a energia, clima, educação, gestão e tomada de decisão.</p>
-          </article>
-          <article class="focus-card focus-cyan" aria-hidden="true">
-            <span class="focus-icon">
-              <svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>
-            </span>
-            <h3>Dados Ambientais</h3>
-            <p>Ciência de dados para monitorar recursos, interpretar cenários e orientar políticas.</p>
-          </article>
-          <article class="focus-card focus-amber" aria-hidden="true">
-            <span class="focus-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 21V9"/><path d="M12 13c-4.2 0-7-2.4-7-6 4.2 0 7 2.4 7 6z"/><path d="M12 11c4.2 0 7-2.4 7-6-4.2 0-7 2.4-7 6z"/><path d="M6 21h12"/></svg>
-            </span>
-            <h3>Tecnologia no Campo</h3>
-            <p>Automação, sensores, IoT e sistemas inteligentes para produção responsável.</p>
-          </article>
-          <article class="focus-card focus-green" aria-hidden="true">
-            <span class="focus-icon">
-              <svg viewBox="0 0 24 24"><path d="M20 4c-8.5.2-14 4.9-14 11a5 5 0 0 0 5 5c6.1 0 9.8-6.5 9-16z"/><path d="M4 20c3.6-5.2 7.4-8.5 12-10"/></svg>
-            </span>
-            <h3>Meio Ambiente</h3>
-            <p>Computação aplicada ao uso responsável de recursos e ao desenvolvimento regional.</p>
-          </article>
-          <article class="focus-card focus-violet" aria-hidden="true">
-            <span class="focus-icon">
-              <svg viewBox="0 0 24 24"><path d="M18 18a4 4 0 0 0 0-8 6 6 0 0 0-11.3-2.2A4.7 4.7 0 0 0 7.5 18H18z"/></svg>
+          <article class="about-feature-card feature-cyan">
+            <span class="about-feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="4" r="2"/><circle cx="20" cy="9" r="2"/><circle cx="18" cy="18" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="4" cy="9" r="2"/><path d="M12 6v3M14.7 10.5l3.5-1M14.2 14.1l2.5 2.5M9.8 14.1l-2.5 2.5M9.3 10.5l-3.5-1"/></svg>
             </span>
             <h3>Inovação UFMT</h3>
-            <p>Projetos, pesquisas e conexões entre universidade, setor produtivo e sociedade.</p>
+            <p>Projetos, pesquisas e conexões entre universidade, setor produtivo e sociedade para criar ecossistemas resilientes.</p>
+          </article>
+
+          <article class="about-feature-card feature-soft">
+            <span class="about-feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3h8v8"/><path d="M20 3l-8 8"/><path d="M20 11c0 5.5-3.8 9-8.5 9A7.5 7.5 0 0 1 4 12.5C4 7.8 7.5 4 13 4"/><path d="M8.5 15.5c2.2-.4 4.2-1.7 6-4"/></svg>
+            </span>
+            <h3>Computação Verde</h3>
+            <p>Tecnologias, infraestruturas e práticas digitais pensadas para reduzir o impacto ambiental de data centers e algoritmos.</p>
+          </article>
+
+          <article class="about-feature-card feature-muted">
+            <span class="about-feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3a7 7 0 0 0-4 12.7V20h8v-4.3A7 7 0 0 0 12 3z"/><path d="M9 21h6"/><path d="M10 12h4"/><path d="M12 10v4"/><path d="M8.5 8.5l1.2 1.2M15.5 8.5l-1.2 1.2"/></svg>
+            </span>
+            <h3>IA Sustentável</h3>
+            <p>Modelos inteligentes aplicados à energia, clima, educação, gestão e tomada de decisão ética para o bem comum.</p>
           </article>
         </div>
       </div>
@@ -186,6 +136,9 @@
         <!-- Palestras -->
         <div class="act-card act-violet reveal">
           <div class="act-glow"></div>
+          <span class="act-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 15a4 4 0 0 0 4-4V6a4 4 0 1 0-8 0v5a4 4 0 0 0 4 4Zm5-4a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21H8a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2h-3v-3.08A7 7 0 0 0 19 11h-2Z"/></svg>
+          </span>
           <h3>Palestras</h3>
           <p>Conversas com especialistas sobre IA, computação verde, inovação pública, clima, dados e tecnologia aplicada.</p>
           <div class="act-dot"></div>
@@ -194,6 +147,9 @@
         <!-- Minicursos -->
         <div class="act-card act-cyan reveal r2">
           <div class="act-glow"></div>
+          <span class="act-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 6.5C10.3 5.3 7.9 4.6 5 4.5c-.6 0-1 .4-1 1v12c0 .6.5 1 1.1 1 2.6.1 4.7.7 6.2 1.8.4.3 1 .3 1.4 0 1.5-1.1 3.6-1.7 6.2-1.8.6 0 1.1-.4 1.1-1v-12c0-.6-.4-1-1-1-2.9.1-5.3.8-7 2Zm-1 12.6c-1.6-.9-3.6-1.4-6-1.5V6.4c2.1.2 3.9.8 5.3 1.8.3.2.5.5.7.8v9.6c0 .2 0 .3 0 .5Zm2-10c1.7-1 3.7-1.6 6-1.7v11.2c-2.4.1-4.4.6-6 1.5V9.1Z"/></svg>
+          </span>
           <h3>Minicursos</h3>
           <p>Experiências práticas em programação, dados, sensores, automação, IA e ferramentas para soluções sustentáveis.</p>
           <div class="act-dot"></div>
@@ -202,6 +158,9 @@
         <!-- Artigos -->
         <div class="act-card act-amber reveal r3">
           <div class="act-glow"></div>
+          <span class="act-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6Zm7 1.5L18.5 9H14a1 1 0 0 1-1-1V3.5ZM7 12h10v1.5H7V12Zm0 3.5h10V17H7v-1.5Zm0 3.5h7v1.5H7V19Z"/></svg>
+          </span>
           <h3>Artigos</h3>
           <p>Pesquisas, relatos técnicos e resultados acadêmicos conectando computação, inovação e sustentabilidade.</p>
           <div class="act-dot"></div>
@@ -210,6 +169,9 @@
         <!-- Workshops -->
         <div class="act-card act-rose reveal r4">
           <div class="act-glow"></div>
+          <span class="act-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M22 6.4 17.6 2 14 5.6l1.2 1.2-6.9 6.9a4.5 4.5 0 0 0-5.4 5.9l2-2a1.8 1.8 0 1 1 2.5 2.5l-2 2a4.5 4.5 0 0 0 5.9-5.4l6.9-6.9 1.2 1.2 3.6-3.6Z"/></svg>
+          </span>
           <h3>Workshops</h3>
           <p>Sessões colaborativas para transformar problemas ambientais e urbanos em protótipos, redes e ações possíveis.</p>
           <div class="act-dot"></div>
@@ -237,85 +199,147 @@
       <div class="sched-body">
         <!-- Dia 1 -->
         <div class="sched-day active" id="d1">
-          <div class="sched-item reveal">
-            <span class="sched-time">08:00</span>
-            <div class="sched-info">
+          <div class="sched-grid">
+            <div class="sched-col-head sched-col-violet" style="grid-column:2"><svg viewBox="0 0 24 24"><path d="M12 15a4 4 0 0 0 4-4V6a4 4 0 1 0-8 0v5a4 4 0 0 0 4 4Zm5-4a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21H8a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2h-3v-3.08A7 7 0 0 0 19 11h-2Z"/></svg>Palestras</div>
+            <div class="sched-col-head sched-col-cyan" style="grid-column:3"><svg viewBox="0 0 24 24"><path d="M12 6.5C10.3 5.3 7.9 4.6 5 4.5c-.6 0-1 .4-1 1v12c0 .6.5 1 1.1 1 2.6.1 4.7.7 6.2 1.8.4.3 1 .3 1.4 0 1.5-1.1 3.6-1.7 6.2-1.8.6 0 1.1-.4 1.1-1v-12c0-.6-.4-1-1-1-2.9.1-5.3.8-7 2Zm-1 12.6c-1.6-.9-3.6-1.4-6-1.5V6.4c2.1.2 3.9.8 5.3 1.8.3.2.5.5.7.8v9.6c0 .2 0 .3 0 .5Zm2-10c1.7-1 3.7-1.6 6-1.7v11.2c-2.4.1-4.4.6-6 1.5V9.1Z"/></svg>Minicursos</div>
+            <div class="sched-col-head sched-col-amber" style="grid-column:4"><svg viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6Zm7 1.5L18.5 9H14a1 1 0 0 1-1-1V3.5ZM7 12h10v1.5H7V12Zm0 3.5h10V17H7v-1.5Zm0 3.5h7v1.5H7V19Z"/></svg>Artigos</div>
+            <div class="sched-col-head sched-col-rose" style="grid-column:5"><svg viewBox="0 0 24 24"><path d="M22 6.4 17.6 2 14 5.6l1.2 1.2-6.9 6.9a4.5 4.5 0 0 0-5.4 5.9l2-2a1.8 1.8 0 1 1 2.5 2.5l-2 2a4.5 4.5 0 0 0 5.9-5.4l6.9-6.9 1.2 1.2 3.6-3.6Z"/></svg>Workshops</div>
+
+            <div class="sched-time" style="grid-row:2">08:00</div>
+            <div class="sched-banner reveal" style="grid-row:2">
               <h4>Credenciamento</h4>
-              <p>Recepção e entrega de matériais</p>
+              <p>Recepção e entrega de materiais · Hall Principal</p>
             </div>
-          </div>
-          <div class="sched-item sched-violet reveal">
-            <span class="sched-time">09:00</span>
-            <div class="sched-info">
+
+            <div class="sched-time" style="grid-row:3">09:00</div>
+            <div class="sched-banner sched-banner-violet reveal" style="grid-row:3">
               <h4>Abertura Oficial</h4>
-              <p>Cerimônia de abertura com autoridades e organização</p>
-              <em class="sched-badge badge-violet">Palestra</em>
+              <p>Cerimônia de abertura com autoridades e organização · Auditório Principal</p>
             </div>
-          </div>
-          <div class="sched-item sched-violet reveal">
-            <span class="sched-time">10:00</span>
-            <div class="sched-info">
-              <h4>Palestra de Abertura</h4>
-              <p>Computação Verde e tecnologias inteligentes para um futuro sustentável</p>
-              <em class="sched-badge badge-violet">Palestra</em>
+
+            <div class="sched-time" style="grid-row:4">10:00</div>
+            <div class="sched-cell sched-cell-violet reveal" style="grid-row:4;grid-column:2">
+              <h4>Computação Verde: Caminhos para o Futuro</h4>
+              <p>Palestra de abertura</p>
             </div>
-          </div>
-          <div class="sched-item sched-cyan reveal">
-            <span class="sched-time">14:00</span>
-            <div class="sched-info">
-              <h4>Minicursos — Sessão 1</h4>
-              <p>Ferramentas de IA, dados e prototipagem para soluções ambientais</p>
-              <em class="sched-badge badge-cyan">Minicurso</em>
+            <div class="sched-cell sched-cell-cyan reveal" style="grid-row:4;grid-column:3">
+              <h4>Python para Dados Ambientais</h4>
+              <p>Minicursos — Sessão 1</p>
             </div>
-          </div>
-          <div class="sched-item sched-amber reveal">
-            <span class="sched-time">16:00</span>
-            <div class="sched-info">
-              <h4>Sessão de Artigos I</h4>
-              <p>Apresentação de artigos completos e resumidos</p>
-              <em class="sched-badge badge-amber">Artigos</em>
+
+            <div class="sched-time" style="grid-row:5">11:00</div>
+            <div class="sched-cell sched-cell-violet reveal" style="grid-row:5;grid-column:2">
+              <h4>IA Aplicada ao Monitoramento Climático</h4>
+              <p>Palestra</p>
+            </div>
+            <div class="sched-cell sched-cell-amber reveal" style="grid-row:5;grid-column:4">
+              <h4>Sessão de Artigos — Bloco A</h4>
+              <p>Computação e sustentabilidade</p>
+            </div>
+
+            <div class="sched-time" style="grid-row:6">12:00</div>
+            <div class="sched-banner reveal" style="grid-row:6">
+              <h4>Intervalo para almoço</h4>
+              <p>Retomada das atividades às 14h</p>
+            </div>
+
+            <div class="sched-time" style="grid-row:7">14:00</div>
+            <div class="sched-cell sched-cell-cyan reveal" style="grid-row:7;grid-column:3">
+              <h4>IoT e Sensores Ambientais</h4>
+              <p>Minicursos — Sessão 1 (continuação)</p>
+            </div>
+            <div class="sched-cell sched-cell-amber reveal" style="grid-row:7;grid-column:4">
+              <h4>Sessão de Artigos — Bloco B</h4>
+              <p>Dados e automação</p>
+            </div>
+            <div class="sched-cell sched-cell-rose reveal" style="grid-row:7;grid-column:5">
+              <h4>Prototipagem de Soluções Verdes</h4>
+              <p>Workshop</p>
+            </div>
+
+            <div class="sched-time" style="grid-row:8">15:30</div>
+            <div class="sched-cell sched-cell-violet reveal" style="grid-row:8;grid-column:2">
+              <h4>Dados Abertos e Transparência Ambiental</h4>
+              <p>Palestra</p>
+            </div>
+            <div class="sched-cell sched-cell-rose reveal" style="grid-row:8;grid-column:5">
+              <h4>Prototipagem de Soluções Verdes</h4>
+              <p>Workshop (continuação)</p>
+            </div>
+
+            <div class="sched-time" style="grid-row:9">17:00</div>
+            <div class="sched-banner sched-banner-violet reveal" style="grid-row:9">
+              <h4>Mesa Redonda: Futuro da Computação Verde</h4>
+              <p>Encerramento do primeiro dia</p>
             </div>
           </div>
         </div>
 
         <!-- Dia 2 -->
         <div class="sched-day" id="d2">
-          <div class="sched-item sched-violet reveal">
-            <span class="sched-time">08:30</span>
-            <div class="sched-info">
-              <h4>Palestra — Dados e Sustentabilidade</h4>
+          <div class="sched-grid">
+            <div class="sched-col-head sched-col-violet" style="grid-column:2"><svg viewBox="0 0 24 24"><path d="M12 15a4 4 0 0 0 4-4V6a4 4 0 1 0-8 0v5a4 4 0 0 0 4 4Zm5-4a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21H8a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2h-3v-3.08A7 7 0 0 0 19 11h-2Z"/></svg>Palestras</div>
+            <div class="sched-col-head sched-col-cyan" style="grid-column:3"><svg viewBox="0 0 24 24"><path d="M12 6.5C10.3 5.3 7.9 4.6 5 4.5c-.6 0-1 .4-1 1v12c0 .6.5 1 1.1 1 2.6.1 4.7.7 6.2 1.8.4.3 1 .3 1.4 0 1.5-1.1 3.6-1.7 6.2-1.8.6 0 1.1-.4 1.1-1v-12c0-.6-.4-1-1-1-2.9.1-5.3.8-7 2Zm-1 12.6c-1.6-.9-3.6-1.4-6-1.5V6.4c2.1.2 3.9.8 5.3 1.8.3.2.5.5.7.8v9.6c0 .2 0 .3 0 .5Zm2-10c1.7-1 3.7-1.6 6-1.7v11.2c-2.4.1-4.4.6-6 1.5V9.1Z"/></svg>Minicursos</div>
+            <div class="sched-col-head sched-col-amber" style="grid-column:4"><svg viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6Zm7 1.5L18.5 9H14a1 1 0 0 1-1-1V3.5ZM7 12h10v1.5H7V12Zm0 3.5h10V17H7v-1.5Zm0 3.5h7v1.5H7V19Z"/></svg>Artigos</div>
+            <div class="sched-col-head sched-col-rose" style="grid-column:5"><svg viewBox="0 0 24 24"><path d="M22 6.4 17.6 2 14 5.6l1.2 1.2-6.9 6.9a4.5 4.5 0 0 0-5.4 5.9l2-2a1.8 1.8 0 1 1 2.5 2.5l-2 2a4.5 4.5 0 0 0 5.9-5.4l6.9-6.9 1.2 1.2 3.6-3.6Z"/></svg>Workshops</div>
+
+            <div class="sched-time" style="grid-row:2">08:00</div>
+            <div class="sched-banner reveal" style="grid-row:2">
+              <h4>Credenciamento tardio</h4>
+              <p>Recepção para participantes do segundo dia</p>
+            </div>
+
+            <div class="sched-time" style="grid-row:3">09:00</div>
+            <div class="sched-cell sched-cell-violet reveal" style="grid-row:3;grid-column:2">
+              <h4>Dados e Sustentabilidade</h4>
               <p>Monitoramento ambiental, visualização e tomada de decisão</p>
-              <em class="sched-badge badge-violet">Palestra</em>
             </div>
-          </div>
-          <div class="sched-item sched-rose reveal">
-            <span class="sched-time">10:00</span>
-            <div class="sched-info">
-              <h4>Workshop — Inovação Regional</h4>
-              <p>Tecnologia, território e desenvolvimento socioeconômico em MT</p>
-              <em class="sched-badge badge-rose">Workshop</em>
+
+            <div class="sched-time" style="grid-row:4">10:00</div>
+            <div class="sched-cell sched-cell-rose reveal" style="grid-row:4;grid-column:5">
+              <h4>Inovação Regional</h4>
+              <p>Tecnologia e território em Mato Grosso</p>
             </div>
-          </div>
-          <div class="sched-item sched-cyan reveal">
-            <span class="sched-time">14:00</span>
-            <div class="sched-info">
-              <h4>Minicursos — Sessão 2</h4>
-              <p>IoT, sensores, automação e sistemas inteligentes</p>
-              <em class="sched-badge badge-cyan">Minicurso</em>
+
+            <div class="sched-time" style="grid-row:5">11:00</div>
+            <div class="sched-cell sched-cell-violet reveal" style="grid-row:5;grid-column:2">
+              <h4>Ética e Governança de Dados</h4>
+              <p>Palestra</p>
             </div>
-          </div>
-          <div class="sched-item sched-amber reveal">
-            <span class="sched-time">16:00</span>
-            <div class="sched-info">
-              <h4>Sessão de Artigos II</h4>
-              <p>Continuação das apresentações de pesquisa</p>
-              <em class="sched-badge badge-amber">Artigos</em>
+            <div class="sched-cell sched-cell-amber reveal" style="grid-row:5;grid-column:4">
+              <h4>Sessão de Artigos — Bloco C</h4>
+              <p>Redes e automação</p>
             </div>
-          </div>
-          <div class="sched-item reveal">
-            <span class="sched-time">19:00</span>
-            <div class="sched-info">
-              <h4>Confratérnizacao</h4>
+
+            <div class="sched-time" style="grid-row:6">12:00</div>
+            <div class="sched-banner reveal" style="grid-row:6">
+              <h4>Intervalo para almoço</h4>
+              <p>Retomada das atividades às 14h</p>
+            </div>
+
+            <div class="sched-time" style="grid-row:7">14:00</div>
+            <div class="sched-cell sched-cell-cyan reveal" style="grid-row:7;grid-column:3">
+              <h4>Automação e Sistemas Inteligentes</h4>
+              <p>Minicursos — Sessão 2</p>
+            </div>
+            <div class="sched-cell sched-cell-rose reveal" style="grid-row:7;grid-column:5">
+              <h4>Oficina de Sensores Urbanos</h4>
+              <p>Workshop</p>
+            </div>
+
+            <div class="sched-time" style="grid-row:8">15:30</div>
+            <div class="sched-cell sched-cell-violet reveal" style="grid-row:8;grid-column:2">
+              <h4>Empreendedorismo em Tecnologia Verde</h4>
+              <p>Palestra</p>
+            </div>
+            <div class="sched-cell sched-cell-cyan reveal" style="grid-row:8;grid-column:3">
+              <h4>Automação e Sistemas Inteligentes</h4>
+              <p>Minicursos — Sessão 2 (continuação)</p>
+            </div>
+
+            <div class="sched-time" style="grid-row:9">19:00</div>
+            <div class="sched-banner sched-banner-rose reveal" style="grid-row:9">
+              <h4>Confraternização</h4>
               <p>Networking e integração entre participantes</p>
             </div>
           </div>
@@ -323,36 +347,66 @@
 
         <!-- Dia 3 -->
         <div class="sched-day" id="d3">
-          <div class="sched-item sched-violet reveal">
-            <span class="sched-time">08:30</span>
-            <div class="sched-info">
-              <h4>Palestra — Software para Impacto</h4>
-              <p>Engenharia, acessibilidade e sistemas confiáveis para desafios reais</p>
-              <em class="sched-badge badge-violet">Palestra</em>
+          <div class="sched-grid">
+            <div class="sched-col-head sched-col-violet" style="grid-column:2"><svg viewBox="0 0 24 24"><path d="M12 15a4 4 0 0 0 4-4V6a4 4 0 1 0-8 0v5a4 4 0 0 0 4 4Zm5-4a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21H8a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2h-3v-3.08A7 7 0 0 0 19 11h-2Z"/></svg>Palestras</div>
+            <div class="sched-col-head sched-col-cyan" style="grid-column:3"><svg viewBox="0 0 24 24"><path d="M12 6.5C10.3 5.3 7.9 4.6 5 4.5c-.6 0-1 .4-1 1v12c0 .6.5 1 1.1 1 2.6.1 4.7.7 6.2 1.8.4.3 1 .3 1.4 0 1.5-1.1 3.6-1.7 6.2-1.8.6 0 1.1-.4 1.1-1v-12c0-.6-.4-1-1-1-2.9.1-5.3.8-7 2Zm-1 12.6c-1.6-.9-3.6-1.4-6-1.5V6.4c2.1.2 3.9.8 5.3 1.8.3.2.5.5.7.8v9.6c0 .2 0 .3 0 .5Zm2-10c1.7-1 3.7-1.6 6-1.7v11.2c-2.4.1-4.4.6-6 1.5V9.1Z"/></svg>Minicursos</div>
+            <div class="sched-col-head sched-col-amber" style="grid-column:4"><svg viewBox="0 0 24 24"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6Zm7 1.5L18.5 9H14a1 1 0 0 1-1-1V3.5ZM7 12h10v1.5H7V12Zm0 3.5h10V17H7v-1.5Zm0 3.5h7v1.5H7V19Z"/></svg>Artigos</div>
+            <div class="sched-col-head sched-col-rose" style="grid-column:5"><svg viewBox="0 0 24 24"><path d="M22 6.4 17.6 2 14 5.6l1.2 1.2-6.9 6.9a4.5 4.5 0 0 0-5.4 5.9l2-2a1.8 1.8 0 1 1 2.5 2.5l-2 2a4.5 4.5 0 0 0 5.9-5.4l6.9-6.9 1.2 1.2 3.6-3.6Z"/></svg>Workshops</div>
+
+            <div class="sched-time" style="grid-row:2">08:00</div>
+            <div class="sched-banner reveal" style="grid-row:2">
+              <h4>Café de Encerramento</h4>
+              <p>Último dia de recepção · Hall Principal</p>
             </div>
-          </div>
-          <div class="sched-item sched-amber reveal">
-            <span class="sched-time">10:00</span>
-            <div class="sched-info">
-              <h4>Sessão de Artigos III</h4>
+
+            <div class="sched-time" style="grid-row:3">09:00</div>
+            <div class="sched-cell sched-cell-violet reveal" style="grid-row:3;grid-column:2">
+              <h4>Software para Impacto Social</h4>
+              <p>Palestra</p>
+            </div>
+
+            <div class="sched-time" style="grid-row:4">10:00</div>
+            <div class="sched-cell sched-cell-amber reveal" style="grid-row:4;grid-column:4">
+              <h4>Sessão de Artigos — Bloco D (Final)</h4>
               <p>Última sessão de apresentações científicas</p>
-              <em class="sched-badge badge-amber">Artigos</em>
             </div>
-          </div>
-          <div class="sched-item sched-cyan reveal">
-            <span class="sched-time">14:00</span>
-            <div class="sched-info">
-              <h4>Minicursos — Sessão 3</h4>
-              <p>Última rodada de cursos práticos</p>
-              <em class="sched-badge badge-cyan">Minicurso</em>
+
+            <div class="sched-time" style="grid-row:5">11:00</div>
+            <div class="sched-cell sched-cell-violet reveal" style="grid-row:5;grid-column:2">
+              <h4>Carreiras em Tecnologia Sustentável</h4>
+              <p>Palestra</p>
             </div>
-          </div>
-          <div class="sched-item sched-rose reveal">
-            <span class="sched-time">16:00</span>
-            <div class="sched-info">
+            <div class="sched-cell sched-cell-cyan reveal" style="grid-row:5;grid-column:3">
+              <h4>Encerramento Prático</h4>
+              <p>Minicursos — Sessão 3</p>
+            </div>
+
+            <div class="sched-time" style="grid-row:6">12:00</div>
+            <div class="sched-banner reveal" style="grid-row:6">
+              <h4>Intervalo para almoço</h4>
+              <p>Retomada das atividades às 14h</p>
+            </div>
+
+            <div class="sched-time" style="grid-row:7">14:00</div>
+            <div class="sched-cell sched-cell-rose reveal" style="grid-row:7;grid-column:5">
+              <h4>Workshop Final: Hackathon Verde</h4>
+              <p>Kickoff das equipes</p>
+            </div>
+
+            <div class="sched-time" style="grid-row:8">15:30</div>
+            <div class="sched-cell sched-cell-violet reveal" style="grid-row:8;grid-column:2">
+              <h4>Painel: Próximos Passos da SEMATEC</h4>
+              <p>Palestra</p>
+            </div>
+            <div class="sched-cell sched-cell-rose reveal" style="grid-row:8;grid-column:5">
+              <h4>Workshop Final: Hackathon Verde</h4>
+              <p>Apresentação dos protótipos</p>
+            </div>
+
+            <div class="sched-time" style="grid-row:9">17:00</div>
+            <div class="sched-banner sched-banner-rose reveal" style="grid-row:9">
               <h4>Workshop Final + Encerramento</h4>
               <p>Premiação de melhores artigos e cerimônia de encerramento</p>
-              <em class="sched-badge badge-rose">Workshop</em>
             </div>
           </div>
         </div>
@@ -416,7 +470,10 @@
 
       <div class="topics-section reveal">
         <p class="eyebrow eyebrow-dim">Tópicos de interesse</p>
-        <div class="topics-wrap">
+        <div class="topics-spotlight" aria-hidden="true">
+          <span class="topics-spotlight-word" id="topicSpotlight">Inteligência Artificial</span>
+        </div>
+        <div class="topics-wrap" id="topicsWrap">
           <span class="topic t-violet">Inteligência Artificial</span>
           <span class="topic t-violet">Machine Learning</span>
           <span class="topic t-cyan">Redes de Computadores</span>
@@ -461,6 +518,12 @@
           <span class="topic t-violet">Tecnologia Assistiva</span>
           <span class="topic t-rose">Computação Verde</span>
           <span class="topic t-amber">Inclusão Digital</span>
+          <span class="topic t-cyan">Green IT / TI Verde</span>
+          <span class="topic t-violet">Eficiência Energética em Data Centers</span>
+          <span class="topic t-rose">Hardware Sustentável e E-waste</span>
+          <span class="topic t-amber">Energias Renováveis e Tecnologia</span>
+          <span class="topic t-cyan">Economia Circular Digital</span>
+          <span class="topic t-violet">Computação Consciente de Carbono</span>
         </div>
       </div>
     </div>
@@ -470,47 +533,118 @@
   <section class="section" id="palestrantes">
     <div class="wrap">
       <header class="s-head reveal">
-        <p class="eyebrow">Palestrantes</p>
-        <h2>Convidados confirmados</h2>
-        <p class="s-desc">Espaço reservado para os nomes confirmados nas trilhas centrais da SEMATEC.</p>
+        <p class="eyebrow">Palestras</p>
+        <h2>Palestras em destaque</h2>
+        <p class="s-desc">Programação fictícia para visualizar como os destaques das palestras aparecerão no site.</p>
       </header>
-      <div class="speakers-grid">
-        <div class="speaker-card reveal">
-          <div class="sp-avatar sp-violet">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      <div class="talks-showcase">
+        <div class="talk-carousel reveal" aria-label="Palestras em destaque">
+          <article class="talk-feature talk-slide is-active">
+            <div class="talk-feature-image">
+              <img src="img/palestra-ia-sustentavel-abstrata.png" alt="Imagem abstrata sobre IA sustentável">
+            </div>
+            <div class="talk-feature-copy">
+              <span class="speaker-label">Conferência de abertura</span>
+              <h3>IA sustentável para cidades, campos e comunidades inteligentes</h3>
+              <p>Uma visão prática sobre como modelos inteligentes podem apoiar decisões ambientais, reduzir desperdícios e aproximar tecnologia de impacto social.</p>
+              <div class="talk-meta">
+                <span>14 Set · 19h</span>
+                <span>Auditório Principal</span>
+              </div>
+              <strong>Dra. Helena Costa</strong>
+              <a class="talk-more" href="palestra-ia-sustentavel.html">Saiba mais</a>
+            </div>
+          </article>
+
+          <article class="talk-feature talk-slide">
+            <div class="talk-feature-image">
+              <img src="img/palestra-agro-digital-abstrata.png" alt="Imagem abstrata sobre agro digital">
+            </div>
+            <div class="talk-feature-copy">
+              <span class="speaker-label">Painel técnico</span>
+              <h3>Agro digital e sensores para produção de baixo impacto</h3>
+              <p>Sensores, conectividade e dados ambientais aplicados a decisões mais responsáveis no campo.</p>
+              <div class="talk-meta"><span>15 Set · 10h</span><span>Sala Verde</span></div>
+              <strong>Dr. Rafael Nogueira</strong>
+              <a class="talk-more" href="palestra-agro-digital.html">Saiba mais</a>
+            </div>
+          </article>
+
+          <article class="talk-feature talk-slide">
+            <div class="talk-feature-image">
+              <img src="img/palestra-energia-software-abstrata.png" alt="Imagem abstrata sobre energia limpa e software">
+            </div>
+            <div class="talk-feature-copy">
+              <span class="speaker-label">Palestra convidada</span>
+              <h3>Software, energia limpa e sistemas resilientes</h3>
+              <p>Como plataformas digitais ajudam a monitorar, automatizar e fortalecer infraestruturas sustentáveis.</p>
+              <div class="talk-meta"><span>15 Set · 16h</span><span>Auditório IC</span></div>
+              <strong>Dra. Marina Tanaka</strong>
+              <a class="talk-more" href="palestra-energia-software.html">Saiba mais</a>
+            </div>
+          </article>
+
+          <article class="talk-feature talk-slide">
+            <div class="talk-feature-image">
+              <img src="img/palestra-dados-clima-abstrata.png" alt="Imagem abstrata sobre dados climáticos">
+            </div>
+            <div class="talk-feature-copy">
+              <span class="speaker-label">Encerramento</span>
+              <h3>Dados climáticos para políticas públicas inteligentes</h3>
+              <p>Visualização, análise e modelos preditivos para apoiar planejamento urbano e decisões públicas.</p>
+              <div class="talk-meta"><span>16 Set · 18h</span><span>Auditório Principal</span></div>
+              <strong>Dr. Augusto Lima</strong>
+              <a class="talk-more" href="palestra-dados-clima.html">Saiba mais</a>
+            </div>
+          </article>
+
+          <div class="talk-carousel-controls" aria-label="Controles do carrossel">
+            <button class="talk-carousel-arrow" type="button" data-talk-dir="-1" aria-label="Palestra anterior">&lsaquo;</button>
+            <div class="talk-carousel-dots" aria-label="Selecionar palestra">
+              <button class="is-active" type="button" data-talk-slide="0" aria-label="Mostrar palestra 1"></button>
+              <button type="button" data-talk-slide="1" aria-label="Mostrar palestra 2"></button>
+              <button type="button" data-talk-slide="2" aria-label="Mostrar palestra 3"></button>
+              <button type="button" data-talk-slide="3" aria-label="Mostrar palestra 4"></button>
+            </div>
+            <button class="talk-carousel-arrow" type="button" data-talk-dir="1" aria-label="Próxima palestra">&rsaquo;</button>
           </div>
-          <span class="speaker-label">Trilha</span>
-          <h4>IA e Sustentabilidade</h4>
-          <p>Palestrante a confirmar</p>
         </div>
-        <div class="speaker-card reveal r2">
-          <div class="sp-avatar sp-cyan">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          </div>
-          <span class="speaker-label">Trilha</span>
-          <h4>Dados Ambientais</h4>
-          <p>Palestrante a confirmar</p>
-        </div>
-        <div class="speaker-card reveal r3">
-          <div class="sp-avatar sp-amber">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          </div>
-          <span class="speaker-label">Trilha</span>
-          <h4>Computação Verde</h4>
-          <p>Palestrante a confirmar</p>
-        </div>
-        <div class="speaker-card reveal r4">
-          <div class="sp-avatar sp-rose">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          </div>
-          <span class="speaker-label">Trilha</span>
-          <h4>Inovação Climática</h4>
-          <p>Palestrante a confirmar</p>
+
+        <div class="speakers-grid talks-grid">
+          <article class="speaker-card reveal r2">
+            <img class="speaker-photo" src="img/palestra-agro-digital-abstrata.png" alt="Imagem abstrata sobre agro digital">
+            <div class="speaker-card-body">
+              <span class="speaker-label">Painel técnico</span>
+              <h4>Agro digital e sensores para produção de baixo impacto</h4>
+              <p>Dr. Rafael Nogueira</p>
+              <div class="talk-meta"><span>15 Set · 10h</span><span>Sala Verde</span></div>
+              <a class="talk-more" href="palestra-agro-digital.html">Saiba mais</a>
+            </div>
+          </article>
+          <article class="speaker-card reveal r3">
+            <img class="speaker-photo" src="img/palestra-energia-software-abstrata.png" alt="Imagem abstrata sobre energia limpa e software">
+            <div class="speaker-card-body">
+              <span class="speaker-label">Palestra convidada</span>
+              <h4>Software, energia limpa e sistemas resilientes</h4>
+              <p>Dra. Marina Tanaka</p>
+              <div class="talk-meta"><span>15 Set · 16h</span><span>Auditório IC</span></div>
+              <a class="talk-more" href="palestra-energia-software.html">Saiba mais</a>
+            </div>
+          </article>
+          <article class="speaker-card reveal r4">
+            <img class="speaker-photo" src="img/palestra-dados-clima-abstrata.png" alt="Imagem abstrata sobre dados climáticos">
+            <div class="speaker-card-body">
+              <span class="speaker-label">Encerramento</span>
+              <h4>Dados climáticos para políticas públicas inteligentes</h4>
+              <p>Dr. Augusto Lima</p>
+              <div class="talk-meta"><span>16 Set · 18h</span><span>Auditório Principal</span></div>
+              <a class="talk-more" href="palestra-dados-clima.html">Saiba mais</a>
+            </div>
+          </article>
         </div>
       </div>
     </div>
   </section>
-
   <!-- ── INSCRICOES ── -->
   <section class="section" id="inscricoes">
     <div class="wrap">
@@ -652,35 +786,141 @@
         <p class="eyebrow eyebrow-dim">Organização</p>
         <h2>Quem faz acontecer</h2>
       </header>
-      <div class="org-grid">
-        <div class="org-card org-card-featured reveal">
-          <div class="org-photo-ring">
-            <img class="org-photo" src="img/gracyeli-guarienti.jpg" alt="Prof.ª Dr.ª Gracyeli Santos Souza Guarienti">
+      <div class="org-drawers reveal" aria-label="Equipes da organização">
+        <details class="org-drawer">
+          <summary>
+            <span>Coordenação geral</span>
+            <strong>7 membros</strong>
+          </summary>
+          <div class="org-member-grid">
+            <article class="org-member-slot">
+              <div class="org-member-photo org-member-photo-gracyeli">
+                <img src="img/gracyeli-santos-souza-guarienti.jpeg" alt="Profa. Dra. Gracyeli Santos Souza Guarienti">
+              </div>
+              <div><h4>Profa. Dra. Gracyeli Santos Souza Guarienti</h4><p>Coordenadora Geral</p><a class="org-member-email" href="mailto:email@ufmt.br">email@ufmt.br</a></div>
+            </article>
+            <article class="org-member-slot">
+              <div class="org-member-photo org-member-photo-nelcileno">
+                <img src="img/nelcileno-virgilio-de-souza-araujo.jpg" alt="Prof. Dr. Nelcileno Virgilio De Souza Araujo">
+              </div>
+              <div><h4>Prof. Dr. Nelcileno Virgilio De Souza Araujo</h4><p>Coordenador de Programa</p><a class="org-member-email" href="mailto:email@ufmt.br">email@ufmt.br</a></div>
+            </article>
+            <article class="org-member-slot">
+              <div class="org-member-photo org-member-photo-patricia">
+                <img src="img/patricia-cristiane-de-souza.jpg" alt="Profa. Dra. Patricia Cristiane De Souza">
+              </div>
+              <div><h4>Profa. Dra. Patricia Cristiane De Souza</h4><p>Coordenadora Pedagógica</p><a class="org-member-email" href="mailto:email@ufmt.br">email@ufmt.br</a></div>
+            </article>
+            <article class="org-member-slot">
+              <div class="org-member-photo" aria-hidden="true"></div>
+              <div><h4>Nome do membro</h4><p>Cargo/função</p><a class="org-member-email" href="mailto:email@exemplo.com">email@exemplo.com</a></div>
+            </article>
+            <article class="org-member-slot">
+              <div class="org-member-photo" aria-hidden="true"></div>
+              <div><h4>Nome do membro</h4><p>Cargo/função</p><a class="org-member-email" href="mailto:email@exemplo.com">email@exemplo.com</a></div>
+            </article>
+            <article class="org-member-slot">
+              <div class="org-member-photo" aria-hidden="true"></div>
+              <div><h4>Nome do membro</h4><p>Cargo/função</p><a class="org-member-email" href="mailto:email@exemplo.com">email@exemplo.com</a></div>
+            </article>
+            <article class="org-member-slot">
+              <div class="org-member-photo" aria-hidden="true"></div>
+              <div><h4>Nome do membro</h4><p>Cargo/função</p><a class="org-member-email" href="mailto:email@exemplo.com">email@exemplo.com</a></div>
+            </article>
           </div>
-          <h4>Coordenadora Geral</h4>
-          <p><strong>Prof.ª Dr.ª Gracyeli Santos Souza Guarienti</strong></p>
-        </div>
-        <div class="org-card org-card-featured reveal r2">
-          <div class="org-photo-ring">
-            <img class="org-photo" src="img/nelcileno-araujo.jpg" alt="Prof. Dr. Nelcileno Virgilio De Souza Araujo">
+        </details>
+
+        <details class="org-drawer">
+          <summary>
+            <span>Comitê científico</span>
+            <strong>4 membros</strong>
+          </summary>
+          <div class="org-member-grid">
+            <article class="org-member-slot">
+              <div class="org-member-photo" aria-hidden="true"></div>
+              <div><h4>Nome do membro</h4><p>Cargo/função</p><a class="org-member-email" href="mailto:email@exemplo.com">email@exemplo.com</a></div>
+            </article>
+            <article class="org-member-slot">
+              <div class="org-member-photo" aria-hidden="true"></div>
+              <div><h4>Nome do membro</h4><p>Cargo/função</p><a class="org-member-email" href="mailto:email@exemplo.com">email@exemplo.com</a></div>
+            </article>
+            <article class="org-member-slot">
+              <div class="org-member-photo" aria-hidden="true"></div>
+              <div><h4>Nome do membro</h4><p>Cargo/função</p><a class="org-member-email" href="mailto:email@exemplo.com">email@exemplo.com</a></div>
+            </article>
+            <article class="org-member-slot">
+              <div class="org-member-photo" aria-hidden="true"></div>
+              <div><h4>Nome do membro</h4><p>Cargo/função</p><a class="org-member-email" href="mailto:email@exemplo.com">email@exemplo.com</a></div>
+            </article>
           </div>
-          <h4>Coordenador de Programa</h4>
-          <p><strong>Prof. Dr. Nelcileno Virgilio De Souza Araujo</strong></p>
-        </div>
-        <div class="org-card org-card-featured reveal r3">
-          <div class="org-photo-ring">
-            <img class="org-photo" src="img/patricia-souza.jpg" alt="Prof. Dra. Patricia Cristiane De Souza">
+        </details>
+
+        <details class="org-drawer">
+          <summary>
+            <span>Mídia e marketing</span>
+            <strong>4 membros</strong>
+          </summary>
+          <div class="org-member-grid">
+            <article class="org-member-slot">
+              <div class="org-member-photo" aria-hidden="true"></div>
+              <div><h4>Nome do membro</h4><p>Cargo/função</p><a class="org-member-email" href="mailto:email@exemplo.com">email@exemplo.com</a></div>
+            </article>
+            <article class="org-member-slot">
+              <div class="org-member-photo" aria-hidden="true"></div>
+              <div><h4>Nome do membro</h4><p>Cargo/função</p><a class="org-member-email" href="mailto:email@exemplo.com">email@exemplo.com</a></div>
+            </article>
+            <article class="org-member-slot">
+              <div class="org-member-photo" aria-hidden="true"></div>
+              <div><h4>Nome do membro</h4><p>Cargo/função</p><a class="org-member-email" href="mailto:email@exemplo.com">email@exemplo.com</a></div>
+            </article>
+            <article class="org-member-slot">
+              <div class="org-member-photo" aria-hidden="true"></div>
+              <div><h4>Nome do membro</h4><p>Cargo/função</p><a class="org-member-email" href="mailto:email@exemplo.com">email@exemplo.com</a></div>
+            </article>
           </div>
-          <h4>Coordenadora Local</h4>
-          <p><strong>Prof. Dra. Patricia Cristiane De Souza</strong></p>
-        </div>
-      </div>
-      <div class="inst-row reveal">
-        <div class="inst"><span>SBC</span><small>Sociedade Brasileira de Computação</small></div>
-        <div class="inst-div"></div>
-        <div class="inst"><span>UFMT</span><small>Universidade Federal de Mato Grosso</small></div>
-        <div class="inst-div"></div>
-        <div class="inst"><span>IC</span><small>Instituto de Computação</small></div>
+        </details>
+
+        <details class="org-drawer">
+          <summary>
+            <span>Logística</span>
+            <strong>3 membros</strong>
+          </summary>
+          <div class="org-member-grid">
+            <article class="org-member-slot">
+              <div class="org-member-photo" aria-hidden="true"></div>
+              <div><h4>Nome do membro</h4><p>Cargo/função</p><a class="org-member-email" href="mailto:email@exemplo.com">email@exemplo.com</a></div>
+            </article>
+            <article class="org-member-slot">
+              <div class="org-member-photo" aria-hidden="true"></div>
+              <div><h4>Nome do membro</h4><p>Cargo/função</p><a class="org-member-email" href="mailto:email@exemplo.com">email@exemplo.com</a></div>
+            </article>
+            <article class="org-member-slot">
+              <div class="org-member-photo" aria-hidden="true"></div>
+              <div><h4>Nome do membro</h4><p>Cargo/função</p><a class="org-member-email" href="mailto:email@exemplo.com">email@exemplo.com</a></div>
+            </article>
+          </div>
+        </details>
+
+        <details class="org-drawer">
+          <summary>
+            <span>Desenvolvimento do Site</span>
+            <strong>2 membros</strong>
+          </summary>
+          <div class="org-member-grid">
+            <article class="org-member-slot">
+              <div class="org-member-photo org-member-photo-aline">
+                <img src="img/aline-elias-cardoso-verhalen.png" alt="Profa. Dra. Aline Elias Cardoso Verhalen">
+              </div>
+              <div><h4>Profa. Dra. Aline Elias Cardoso Verhalen</h4><p>Coordenadora de desenvolvimento</p><a class="org-member-email" href="mailto:email@ufmt.br">email@ufmt.br</a></div>
+            </article>
+            <article class="org-member-slot">
+              <div class="org-member-photo org-member-photo-vitor">
+                <img src="img/vitor-felipe-bastos-arruda-carneiro.jpeg" alt="Vitor Felipe Bastos de Arruda Carneiro">
+              </div>
+              <div><h4>Vitor Felipe Bastos de Arruda Carneiro</h4><p>Desenvolvedor</p><a class="org-member-email" href="mailto:email@ufmt.br">email@ufmt.br</a></div>
+            </article>
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -693,30 +933,95 @@
         <h2>Apoio ao evento</h2>
         <p class="s-desc">Instituições que apoiam a realização da SEMATEC UFMT 2026.</p>
       </header>
-      <div class="sponsors-grid reveal">
-        <div class="sponsor-slot">
-          <h3>SBC</h3>
-          <p>Sociedade Brasileira de Computação</p>
-          <a class="sponsor-logo-link" href="https://www.sbc.org.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da Sociedade Brasileira de Computação">
-            <img class="sponsor-logo sponsor-logo-sbc" src="img/logo-sbc.jpg" alt="Logo da Sociedade Brasileira de Computação">
-          </a>
-        </div>
-        <div class="sponsor-slot">
-          <h3>UFMT</h3>
-          <p>Universidade Federal de Mato Grosso</p>
-          <a class="sponsor-logo-link" href="https://www.ufmt.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da Universidade Federal de Mato Grosso">
-            <img class="sponsor-logo sponsor-logo-ufmt" src="img/logo-ufmt.png" alt="Logo da Universidade Federal de Mato Grosso">
-          </a>
-        </div>
-        <div class="sponsor-slot">
-          <h3>IC</h3>
-          <p>Instituto de Computação</p>
-          <a class="sponsor-logo-link" href="https://www.ic.ufmt.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site do Instituto de Computação">
-            <img class="sponsor-logo sponsor-logo-ic" src="img/logo-ic.png" alt="Logo do Instituto de Computação">
-          </a>
+      <div class="sponsors-grid sponsors-carousel reveal" aria-label="Apoio ao evento">
+        <div class="sponsors-track">
+          <div class="sponsor-slot">
+            <h3>SBC</h3>
+            <p>Sociedade Brasileira de Computação</p>
+            <a class="sponsor-logo-link" href="https://www.sbc.org.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da Sociedade Brasileira de Computação">
+              <img class="sponsor-logo sponsor-logo-sbc" src="img/logo-sbc.jpg" alt="Logo da Sociedade Brasileira de Computação">
+            </a>
+          </div>
+          <div class="sponsor-slot">
+            <h3>UFMT</h3>
+            <p>Universidade Federal de Mato Grosso</p>
+            <a class="sponsor-logo-link" href="https://www.ufmt.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da Universidade Federal de Mato Grosso">
+              <img class="sponsor-logo sponsor-logo-ufmt" src="img/logo-ufmt.png" alt="Logo da Universidade Federal de Mato Grosso">
+            </a>
+          </div>
+          <div class="sponsor-slot">
+            <h3>IC</h3>
+            <p>Instituto de Computação</p>
+            <a class="sponsor-logo-link" href="https://www.ic.ufmt.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site do Instituto de Computação">
+              <img class="sponsor-logo sponsor-logo-ic" src="img/logo-ic.png" alt="Logo do Instituto de Computação">
+            </a>
+          </div>
+          <div class="sponsor-slot">
+            <h3>ALMT</h3>
+            <p>Assembleia Legislativa do Estado de Mato Grosso</p>
+            <div class="sponsor-logo-link">
+              <img class="sponsor-logo sponsor-logo-almt" src="img/logo-assembleia-legislativa-mt.png" alt="Logo da Assembleia Legislativa do Estado de Mato Grosso">
+            </div>
+          </div>
+          <div class="sponsor-slot">
+            <h3>Governo de MT</h3>
+            <p>Governo do Estado de Mato Grosso</p>
+            <div class="sponsor-logo-link">
+              <img class="sponsor-logo sponsor-logo-govmt" src="img/logo-governo-mato-grosso.png" alt="Logo do Governo do Estado de Mato Grosso">
+            </div>
+          </div>
+          <div class="sponsor-slot">
+            <h3>PPGCOMP</h3>
+            <p>Programa de Pós-Graduação em Computação Aplicada</p>
+            <div class="sponsor-logo-link">
+              <img class="sponsor-logo sponsor-logo-ppgcomp" src="img/logo-ppgcomp.png" alt="Logo do Programa de Pós-Graduação em Computação Aplicada">
+            </div>
+          </div>
+
+          <div class="sponsor-slot" aria-hidden="true">
+            <h3>SBC</h3>
+            <p>Sociedade Brasileira de Computação</p>
+            <div class="sponsor-logo-link">
+              <img class="sponsor-logo sponsor-logo-sbc" src="img/logo-sbc.jpg" alt="">
+            </div>
+          </div>
+          <div class="sponsor-slot" aria-hidden="true">
+            <h3>UFMT</h3>
+            <p>Universidade Federal de Mato Grosso</p>
+            <div class="sponsor-logo-link">
+              <img class="sponsor-logo sponsor-logo-ufmt" src="img/logo-ufmt.png" alt="">
+            </div>
+          </div>
+          <div class="sponsor-slot" aria-hidden="true">
+            <h3>IC</h3>
+            <p>Instituto de Computação</p>
+            <div class="sponsor-logo-link">
+              <img class="sponsor-logo sponsor-logo-ic" src="img/logo-ic.png" alt="">
+            </div>
+          </div>
+          <div class="sponsor-slot" aria-hidden="true">
+            <h3>ALMT</h3>
+            <p>Assembleia Legislativa do Estado de Mato Grosso</p>
+            <div class="sponsor-logo-link">
+              <img class="sponsor-logo sponsor-logo-almt" src="img/logo-assembleia-legislativa-mt.png" alt="">
+            </div>
+          </div>
+          <div class="sponsor-slot" aria-hidden="true">
+            <h3>Governo de MT</h3>
+            <p>Governo do Estado de Mato Grosso</p>
+            <div class="sponsor-logo-link">
+              <img class="sponsor-logo sponsor-logo-govmt" src="img/logo-governo-mato-grosso.png" alt="">
+            </div>
+          </div>
+          <div class="sponsor-slot" aria-hidden="true">
+            <h3>PPGCOMP</h3>
+            <p>Programa de Pós-Graduação em Computação Aplicada</p>
+            <div class="sponsor-logo-link">
+              <img class="sponsor-logo sponsor-logo-ppgcomp" src="img/logo-ppgcomp.png" alt="">
+            </div>
+          </div>
         </div>
       </div>
-      <p class="contact-link reveal"><a href="mailto:sematec2026@ic.ufmt.br">sematec2026@ic.ufmt.br</a></p>
     </div>
   </section>
 
@@ -726,7 +1031,7 @@
       <div class="foot-grid">
         <div class="foot-brand">
           <div class="nav-logo foot-logo">
-            <img class="nav-logo-img footer-logo-img" src="img/sematec-logo-dark.png" alt="SEMATEC UFMT 2026">
+            <img class="nav-logo-img footer-logo-img" src="img/sematec-logo-light.png" alt="SEMATEC UFMT 2026">
           </div>
           <p>Semana Acadêmica de Tecnologia, Computação e Inovação</p>
           <p class="foot-small">Cuiabá · 14 a 16 de setembro de 2026</p>
@@ -773,6 +1078,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=20260621-1232"></script>
+  <script src="js/main.js?v=20260703-sched-compact"></script>
 </body>
 </html>
