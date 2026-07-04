@@ -7136,10 +7136,10 @@ body{
   height:116px !important;
 }
 #parceiros .sponsor-logo-ppgcomp{
-  max-width:160px !important;
-  height:128px !important;
-  object-fit:cover !important;
-  object-position:center top !important;
+  max-width:300px !important;
+  height:106px !important;
+  object-fit:contain !important;
+  object-position:center !important;
 }
 @keyframes sponsorLoop{
   from{transform:translate3d(0,0,0)}
@@ -7255,5 +7255,273 @@ body{
     left:14px !important;
     right:14px !important;
     bottom:14px !important;
+  }
+}
+
+/* Ingresso unico gratuito */
+#inscricoes .ticket-experience{
+  width:100%;
+  min-height:320px;
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) minmax(280px, 360px);
+  gap:34px;
+  align-items:stretch;
+  padding:42px;
+  border-radius:28px;
+  overflow:hidden;
+  position:relative;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.72), rgba(255,255,255,.88)),
+    linear-gradient(135deg, rgba(100,241,63,.2), rgba(20,200,255,.18) 48%, rgba(127,120,255,.16));
+  border:1px solid rgba(14,89,58,.14);
+  box-shadow:0 28px 80px rgba(22,103,67,.12);
+}
+#inscricoes .ticket-experience::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg, rgba(14,89,58,.075) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(14,89,58,.055) 1px, transparent 1px);
+  background-size:42px 42px;
+  mask-image:linear-gradient(90deg, #000, transparent 78%);
+}
+#inscricoes .ticket-copy,
+#inscricoes .ticket-action{
+  position:relative;
+  z-index:2;
+}
+#inscricoes .ticket-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-width:0;
+}
+#inscricoes .ticket-label{
+  width:max-content;
+  margin-bottom:18px;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(8,20,24,.08);
+  color:#0b302a;
+  font-size:.76rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:0;
+}
+#inscricoes .ticket-copy h3{
+  margin:0 0 16px;
+  color:#061017;
+  font-size:clamp(2.4rem, 5vw, 5.2rem);
+  line-height:.95;
+  font-weight:850;
+  letter-spacing:0;
+}
+#inscricoes .ticket-copy p{
+  max-width:680px;
+  color:rgba(8,20,24,.68);
+  font-size:1.06rem;
+  line-height:1.65;
+}
+#inscricoes .ticket-points{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:26px;
+}
+#inscricoes .ticket-points span{
+  display:inline-flex;
+  align-items:center;
+  min-height:38px;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(14,89,58,.12);
+  color:#183b35;
+  font-size:.84rem;
+  font-weight:700;
+}
+#inscricoes .ticket-action{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:stretch;
+  padding:28px;
+  border-radius:22px;
+  background:rgba(255,255,255,.78);
+  border:1px solid rgba(14,89,58,.12);
+  box-shadow:0 18px 48px rgba(22,103,67,.1);
+}
+#inscricoes .ticket-action span{
+  color:rgba(8,20,24,.58);
+  font-size:.78rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:0;
+}
+#inscricoes .ticket-action strong{
+  margin:6px 0 12px;
+  color:#061017;
+  font-size:clamp(2.2rem, 4vw, 3.4rem);
+  line-height:1;
+  font-weight:850;
+}
+#inscricoes .ticket-action p{
+  margin:0 0 22px;
+  color:rgba(8,20,24,.62);
+  font-size:.95rem;
+  line-height:1.5;
+}
+#inscricoes .ticket-action .price-button{
+  margin-top:auto;
+  min-height:54px;
+  background:linear-gradient(135deg, var(--leaf), var(--cyan));
+  color:#031008;
+  font-size:.94rem;
+}
+
+@media (max-width:860px){
+  #inscricoes .ticket-experience{
+    grid-template-columns:1fr;
+    padding:28px;
+    gap:24px;
+  }
+  #inscricoes .ticket-action{
+    padding:24px;
+  }
+}
+
+@media (max-width:520px){
+  #inscricoes .ticket-experience{
+    padding:22px;
+    border-radius:22px;
+  }
+  #inscricoes .ticket-copy h3{
+    font-size:2.55rem;
+  }
+  #inscricoes .ticket-points span{
+    width:100%;
+    justify-content:center;
+  }
+}
+
+/* Logo PPGCOMP completa no carrossel de apoio */
+#parceiros .sponsor-slot-ppgcomp{
+  flex-basis:360px !important;
+}
+#parceiros .sponsor-slot-ppgcomp .sponsor-logo-link{
+  min-height:116px !important;
+  overflow:visible !important;
+}
+#parceiros .sponsor-slot-ppgcomp .sponsor-logo-ppgcomp{
+  width:100% !important;
+  max-width:270px !important;
+  height:94px !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+}
+
+@media (max-width:640px){
+  #parceiros .sponsor-slot-ppgcomp{
+    flex-basis:300px !important;
+  }
+  #parceiros .sponsor-slot-ppgcomp .sponsor-logo-ppgcomp{
+    max-width:230px !important;
+    height:86px !important;
+  }
+}
+
+/* Heros das paginas de atividades com a mesma foto desfocada dos cards */
+.call-hero.activity-violet,
+.call-hero.activity-cyan,
+.call-hero.activity-amber,
+.call-hero.activity-rose{
+  min-height:360px;
+  display:flex;
+  align-items:center;
+  border-bottom:none !important;
+  background:#07110d !important;
+  animation:none !important;
+  isolation:isolate;
+}
+.call-hero.activity-violet::before,
+.call-hero.activity-cyan::before,
+.call-hero.activity-amber::before,
+.call-hero.activity-rose::before{
+  content:'';
+  position:absolute;
+  inset:-22px;
+  z-index:0;
+  background-size:cover !important;
+  background-repeat:no-repeat !important;
+  filter:blur(7px) saturate(1.16);
+  transform:scale(1.07);
+}
+.call-hero.activity-violet::before{
+  background:
+    linear-gradient(160deg, rgba(124,92,255,.26), rgba(255,139,217,.14)),
+    url('../img/sematec-hero-meadow.png') center 60% / cover no-repeat !important;
+}
+.call-hero.activity-cyan::before{
+  background:
+    linear-gradient(160deg, rgba(53,234,215,.2), rgba(216,255,242,.08)),
+    url('../img/atividade-minicursos-bg.webp') center 55% / cover no-repeat !important;
+}
+.call-hero.activity-amber::before{
+  background:
+    linear-gradient(160deg, rgba(255,213,95,.2), rgba(255,157,119,.1)),
+    url('../img/atividade-artigos-bg.jpg') center 45% / cover no-repeat !important;
+}
+.call-hero.activity-rose::before{
+  background:
+    linear-gradient(160deg, rgba(255,107,75,.2), rgba(255,228,106,.1)),
+    url('../img/atividade-workshops-bg.jpg') center 55% / cover no-repeat !important;
+}
+.call-hero.activity-violet::after,
+.call-hero.activity-cyan::after,
+.call-hero.activity-amber::after,
+.call-hero.activity-rose::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(90deg, rgba(2,12,10,.58), rgba(2,12,10,.22) 48%, rgba(2,12,10,.36)),
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+  mix-blend-mode:normal;
+  animation:none !important;
+}
+.call-hero.activity-violet .wrap,
+.call-hero.activity-cyan .wrap,
+.call-hero.activity-amber .wrap,
+.call-hero.activity-rose .wrap{
+  position:relative;
+  z-index:3;
+}
+.call-hero.activity-violet h1,
+.call-hero.activity-cyan h1,
+.call-hero.activity-amber h1,
+.call-hero.activity-rose h1{
+  color:#fff !important;
+  text-shadow:0 18px 42px rgba(0,0,0,.28);
+}
+.call-hero.activity-violet .call-kicker,
+.call-hero.activity-cyan .call-kicker,
+.call-hero.activity-amber .call-kicker,
+.call-hero.activity-rose .call-kicker,
+.call-hero.activity-violet p,
+.call-hero.activity-cyan p,
+.call-hero.activity-amber p,
+.call-hero.activity-rose p{
+  color:rgba(255,255,255,.84) !important;
+}
+
+@media (max-width:640px){
+  .call-hero.activity-violet,
+  .call-hero.activity-cyan,
+  .call-hero.activity-amber,
+  .call-hero.activity-rose{
+    min-height:320px;
   }
 }
