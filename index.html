@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260704-ppgcomp-logo">
+  <link rel="stylesheet" href="css/style.css?v=20260704-about-sub-black">
 </head>
 <body>
 
@@ -22,7 +22,8 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo" aria-label="SEMATEC UFMT 2026">
-        <img class="nav-logo-img" src="img/sematec-logo-light.png" alt="SEMATEC UFMT 2026">
+        <img class="nav-logo-img nav-logo-img-white" src="img/sematec-logo-dark.png" alt="SEMATEC UFMT 2026">
+        <img class="nav-logo-img nav-logo-img-black" src="img/sematec-logo-light.png" alt="SEMATEC UFMT 2026">
       </a>
       <div class="nav-links" id="navLinks">
         <a href="#sobre">Sobre</a>
@@ -42,10 +43,10 @@
   <section class="hero" id="hero">
     <div class="hero-video-stage" aria-hidden="true">
       <video class="hero-video is-active" autoplay muted loop playsinline poster="img/hero-bg-poster.jpg">
-        <source src="video/hero-bg.mp4" type="video/mp4">
+        <source src="video/sematec-hero-01.mp4" type="video/mp4">
       </video>
       <video class="hero-video" autoplay muted loop playsinline>
-        <source src="video/corn-field.mp4" type="video/mp4">
+        <source src="video/sematec-hero-02.mp4" type="video/mp4">
       </video>
     </div>
     <div class="hero-overlay" aria-hidden="true"></div>
@@ -77,7 +78,11 @@
       <div class="about-showcase">
         <header class="about-head about-copy reveal">
           <p class="eyebrow">Sobre</p>
-          <h2>Sobre a <span>SEMATEC UFMT <em>2026</em></span></h2>
+          <h2 class="about-title">
+            <span class="about-title-lead">Sobre a</span>
+            <span class="about-title-main">SEMATEC</span>
+            <span class="about-title-sub">UFMT 2026</span>
+          </h2>
           <p>
             A SEMATEC UFMT 2026 reúne estudantes, pesquisadores, profissionais e comunidade para discutir como a computação pode acelerar soluções ambientais, formar pessoas e aproximar inovação tecnológica de desafios reais do território.
           </p>
@@ -471,59 +476,63 @@
       <div class="topics-section reveal">
         <p class="eyebrow eyebrow-dim">Tópicos de interesse</p>
         <div class="topics-spotlight" aria-hidden="true">
-          <span class="topics-spotlight-word" id="topicSpotlight">Inteligência Artificial</span>
+          <span class="topics-spotlight-word" id="topicSpotlight">Tecnologia verde</span>
         </div>
         <div class="topics-wrap" id="topicsWrap">
-          <span class="topic t-violet">Inteligência Artificial</span>
-          <span class="topic t-violet">Machine Learning</span>
-          <span class="topic t-cyan">Redes de Computadores</span>
-          <span class="topic t-amber">Engenharia de Software</span>
-          <span class="topic t-rose">Computação em Nuvem Verde</span>
-          <span class="topic t-cyan">Cibersegurança</span>
-          <span class="topic t-violet">Segurança da Informação</span>
-          <span class="topic t-cyan">Privacidade e Proteção de Dados</span>
-          <span class="topic t-amber">Banco de Dados</span>
-          <span class="topic t-violet">Ciência de Dados</span>
-          <span class="topic t-cyan">Big Data</span>
-          <span class="topic t-amber">Visualização de Dados</span>
-          <span class="topic t-rose">IoT e Sistemas Embarcados</span>
-          <span class="topic t-violet">Visao Computacional</span>
-          <span class="topic t-cyan">Computação de Alto Desempenho</span>
-          <span class="topic t-amber">Informática na Educação</span>
-          <span class="topic t-cyan">Tecnologias Educacionais</span>
-          <span class="topic t-rose">Sistemas Distribuidos</span>
-          <span class="topic t-violet">NLP e LLMs</span>
-          <span class="topic t-cyan">Blockchain</span>
-          <span class="topic t-amber">IHC</span>
-          <span class="topic t-rose">UX e Acessibilidade</span>
-          <span class="topic t-rose">Sustentabilidade e Tecnologia</span>
-          <span class="topic t-amber">Agronegócio Digital</span>
-          <span class="topic t-cyan">Cidades Inteligentes</span>
-          <span class="topic t-violet">Saúde Digital</span>
-          <span class="topic t-rose">Governança Digital</span>
-          <span class="topic t-amber">Transformação Digital</span>
-          <span class="topic t-cyan">Automação e Robótica</span>
-          <span class="topic t-violet">Realidade Virtual e Aumentada</span>
-          <span class="topic t-rose">Jogos Digitais</span>
-          <span class="topic t-amber">Computação Gráfica</span>
-          <span class="topic t-cyan">Arquitetura de Computadores</span>
-          <span class="topic t-violet">Sistemas Operacionais</span>
-          <span class="topic t-rose">Qualidade de Software</span>
-          <span class="topic t-amber">Teste de Software</span>
-          <span class="topic t-cyan">DevOps e Observabilidade</span>
-          <span class="topic t-violet">Engenharia de Requisitos</span>
-          <span class="topic t-rose">Empreendedorismo e Inovação</span>
-          <span class="topic t-amber">Ética em Computação</span>
-          <span class="topic t-cyan">Computação Social</span>
-          <span class="topic t-violet">Tecnologia Assistiva</span>
-          <span class="topic t-rose">Computação Verde</span>
-          <span class="topic t-amber">Inclusão Digital</span>
-          <span class="topic t-cyan">Green IT / TI Verde</span>
-          <span class="topic t-violet">Eficiência Energética em Data Centers</span>
-          <span class="topic t-rose">Hardware Sustentável e E-waste</span>
-          <span class="topic t-amber">Energias Renováveis e Tecnologia</span>
-          <span class="topic t-cyan">Economia Circular Digital</span>
-          <span class="topic t-violet">Computação Consciente de Carbono</span>
+          <span class="topic t-violet">Tecnologia verde</span>
+          <span class="topic t-cyan">Sustentabilidade</span>
+          <span class="topic t-amber">Inovação verde</span>
+          <span class="topic t-rose">Energia solar</span>
+          <span class="topic t-violet">Energia eólica</span>
+          <span class="topic t-cyan">Energia limpa</span>
+          <span class="topic t-amber">Eficiência energética</span>
+          <span class="topic t-rose">Cidades inteligentes</span>
+          <span class="topic t-violet">Cidades verdes</span>
+          <span class="topic t-cyan">Mobilidade elétrica</span>
+          <span class="topic t-amber">Carros elétricos</span>
+          <span class="topic t-rose">Transporte limpo</span>
+          <span class="topic t-violet">Economia circular</span>
+          <span class="topic t-cyan">Reciclagem</span>
+          <span class="topic t-amber">Lixo eletrônico</span>
+          <span class="topic t-rose">Descarte consciente</span>
+          <span class="topic t-violet">Logística reversa</span>
+          <span class="topic t-cyan">Computação verde</span>
+          <span class="topic t-amber">TI sustentável</span>
+          <span class="topic t-rose">Data centers verdes</span>
+          <span class="topic t-violet">Carbono zero</span>
+          <span class="topic t-cyan">Pegada de carbono</span>
+          <span class="topic t-amber">IA sustentável</span>
+          <span class="topic t-rose">IoT verde</span>
+          <span class="topic t-violet">Sensores ambientais</span>
+          <span class="topic t-cyan">Clima inteligente</span>
+          <span class="topic t-amber">Agro sustentável</span>
+          <span class="topic t-rose">Agrotech verde</span>
+          <span class="topic t-violet">Água inteligente</span>
+          <span class="topic t-cyan">Reuso de água</span>
+          <span class="topic t-amber">Resíduos inteligentes</span>
+          <span class="topic t-rose">Gestão ambiental</span>
+          <span class="topic t-violet">ESG</span>
+          <span class="topic t-cyan">Startups verdes</span>
+          <span class="topic t-amber">Empreendedorismo verde</span>
+          <span class="topic t-rose">Bioinovação</span>
+          <span class="topic t-violet">Biotecnologia verde</span>
+          <span class="topic t-cyan">Materiais ecológicos</span>
+          <span class="topic t-amber">Construção verde</span>
+          <span class="topic t-rose">Casa inteligente</span>
+          <span class="topic t-violet">Iluminação eficiente</span>
+          <span class="topic t-cyan">Automação sustentável</span>
+          <span class="topic t-amber">Blockchain verde</span>
+          <span class="topic t-rose">Educação ambiental</span>
+          <span class="topic t-violet">Políticas verdes</span>
+          <span class="topic t-cyan">Inclusão digital</span>
+          <span class="topic t-amber">Consumo consciente</span>
+          <span class="topic t-rose">Design sustentável</span>
+          <span class="topic t-violet">Indústria verde</span>
+          <span class="topic t-cyan">Futuro sustentável</span>
+          <span class="topic t-amber">Interação Humano Computador (IHC)</span>
+          <span class="topic t-rose">Segurança da Informação</span>
+          <span class="topic t-violet">Cyber Segurança</span>
+          <span class="topic t-cyan">Análise de Dados</span>
         </div>
       </div>
     </div>
@@ -651,13 +660,16 @@
       <header class="s-head reveal">
         <p class="eyebrow">Inscrições</p>
         <h2>Garanta sua vaga</h2>
-        <p class="s-desc">Ingresso único e gratuito para todos os participantes.</p>
+        <p class="s-desc">Ingresso gratuito para todos os participantes.</p>
       </header>
 
       <div class="ticket-experience reveal">
         <div class="ticket-copy">
-          <p class="ticket-label">Ingresso único</p>
-          <h3>SEMATEC UFMT 2026</h3>
+          <p class="ticket-label">Ingresso</p>
+          <h3 class="ticket-title">
+            <span class="ticket-title-main">SEMATEC</span>
+            <span class="ticket-title-sub">UFMT 2026</span>
+          </h3>
           <p>Uma inscrição gratuita para estudantes, professores, profissionais e comunidade participarem da programação completa do evento.</p>
           <div class="ticket-points" aria-label="Informações do ingresso">
             <span>14 a 16 de setembro</span>
@@ -1023,6 +1035,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=20260703-sched-compact"></script>
+  <script src="js/main.js?v=20260704-mobile-menu"></script>
 </body>
 </html>

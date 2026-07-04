@@ -18,13 +18,11 @@ const heroStage = document.querySelector('.hero-video-stage');
 if (heroStage) {
   const slides = Array.from(heroStage.querySelectorAll('video'));
   const playlist = [
-    'video/hero-bg.mp4',
-    'video/corn-field.mp4',
-    'video/greenhouse-lab.mp4',
-    'video/wind-turbines.mp4',
-    'video/biotech-lab.mp4',
-    'video/solar-farm.mp4',
-    'video/textile-factory.mp4'
+    'video/sematec-hero-01.mp4',
+    'video/sematec-hero-02.mp4',
+    'video/sematec-hero-03.mp4',
+    'video/sematec-hero-04.mp4',
+    'video/sematec-hero-05.mp4'
   ];
 
   const setSource = (videoEl, src) => {
@@ -57,21 +55,38 @@ if (heroStage) {
 
 // ── Navbar scroll ──
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40 || document.body.classList.contains('subpage'));
-}, { passive: true });
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40 || document.body.classList.contains('subpage'));
+  }, { passive: true });
+}
 
 // ── Mobile menu ──
 const burger = $('navBurger');
 const links  = $('navLinks');
-burger.addEventListener('click', () => {
-  burger.classList.toggle('open');
-  links.classList.toggle('open');
-});
-links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  burger.classList.remove('open');
-  links.classList.remove('open');
-}));
+if (burger && links) {
+  const closeMenu = () => {
+    burger.classList.remove('open');
+    links.classList.remove('open');
+  };
+
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    links.classList.toggle('open');
+  });
+
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeMenu();
+  });
+
+  document.addEventListener('click', event => {
+    if (!links.classList.contains('open')) return;
+    if (links.contains(event.target) || burger.contains(event.target)) return;
+    closeMenu();
+  });
+}
 
 // ── Scroll reveal ──
 const revealObs = new IntersectionObserver(entries => {

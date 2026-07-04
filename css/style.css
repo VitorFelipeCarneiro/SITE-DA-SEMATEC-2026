@@ -92,6 +92,7 @@ img{display:block;max-width:100%}
   display:flex;align-items:center;gap:1px;
   flex-shrink:0;
   line-height:1;
+  position:relative;
 }
 .nav-logo-img{
   display:block;
@@ -100,6 +101,18 @@ img{display:block;max-width:100%}
   object-fit:contain;
   object-position:left center;
 }
+.nav-logo-img-black{
+  position:absolute;
+  top:0;left:0;
+  opacity:0;
+  transition:opacity .25s var(--ease);
+}
+.nav-logo-img-white{
+  opacity:1;
+  transition:opacity .25s var(--ease);
+}
+.nav.scrolled .nav-logo-img-black{opacity:1}
+.nav.scrolled .nav-logo-img-white{opacity:0}
 .nav-logo span:first-child{color:var(--violet)}
 .nav-logo span:last-of-type{color:var(--text)}
 .nav-logo sup{font-size:.65rem;font-weight:500;color:var(--muted);margin-left:3px}
@@ -7194,6 +7207,384 @@ body{
   font-size:1rem !important;
   line-height:1.55 !important;
 }
+
+/* Degradê padrão SEMATEC em todo o site */
+:root{
+  --sematec-green-gradient:
+    radial-gradient(circle at 18% 18%, rgba(146,237,95,.32), transparent 34%),
+    radial-gradient(circle at 84% 12%, rgba(67,189,229,.26), transparent 32%),
+    linear-gradient(135deg, #0d6038 0%, #0fa44e 45%, #18c996 100%);
+  --sematec-green-gradient-soft:
+    radial-gradient(circle at 18% 18%, rgba(146,237,95,.2), transparent 34%),
+    radial-gradient(circle at 84% 12%, rgba(67,189,229,.18), transparent 32%),
+    linear-gradient(135deg, rgba(13,96,56,.9) 0%, rgba(15,164,78,.82) 45%, rgba(24,201,150,.78) 100%);
+  --sematec-green-gradient-text:linear-gradient(100deg, #0d6038 0%, #0fa44e 42%, #18c996 100%);
+  --sematec-green-gradient-action:linear-gradient(135deg, #0fa44e 0%, #18c996 100%);
+  --motion-gradient:var(--sematec-green-gradient);
+  --focus-gradient:var(--sematec-green-gradient);
+  --card-gradient:var(--sematec-green-gradient);
+  --price-gradient:var(--sematec-green-gradient);
+  --option-gradient:var(--sematec-green-gradient);
+  --metal-blue-grad:var(--sematec-green-gradient);
+  --metal-violet-grad:var(--sematec-green-gradient);
+  --metal-rose-grad:var(--sematec-green-gradient);
+  --metal-green-grad:var(--sematec-green-gradient);
+  --metal-line-grad:var(--sematec-green-gradient-action);
+  --metal-hot-line:var(--sematec-green-gradient-action);
+}
+
+.focus-blue,
+.focus-pink,
+.focus-cyan,
+.focus-amber,
+.focus-green,
+.focus-violet{
+  --focus-gradient:var(--sematec-green-gradient) !important;
+}
+.act-violet,
+.act-cyan,
+.act-amber,
+.act-rose{
+  --card-gradient:var(--sematec-green-gradient) !important;
+}
+.price-student,
+.price-professor,
+.price-professional,
+.price-free,
+.option-violet,
+.option-cyan,
+.option-amber,
+.option-rose{
+  --price-gradient:var(--sematec-green-gradient) !important;
+  --option-gradient:var(--sematec-green-gradient) !important;
+}
+
+.btn-glow,
+.hero-actions .btn-glow,
+.sub-link,
+.price-button,
+.act-more,
+.talk-more,
+#palestrantes .talk-more,
+#submissoes .sub-card:hover .sub-link,
+.price-top,
+.registration-option::before,
+.activity-violet::before,
+.activity-cyan::before,
+.activity-amber::before,
+.activity-rose::before{
+  background:var(--sematec-green-gradient-action) !important;
+  color:#031008 !important;
+  border-color:rgba(14,89,58,.18) !important;
+  box-shadow:0 14px 34px rgba(15,164,78,.2) !important;
+}
+.btn-glow::before,
+.sub-link::before,
+.price-button::before,
+.act-more::before,
+.talk-more::before{
+  background:linear-gradient(135deg, rgba(146,237,95,.42), rgba(24,201,150,.3)) !important;
+}
+
+.hero-title em,
+.hero-floating-title em,
+.hero-year,
+.s-head h2 span,
+.topics-spotlight-word,
+#inscricoes .ticket-title-main,
+#inscricoes .ticket-action strong,
+#palestrantes .talk-feature-copy h3,
+#palestrantes .speaker-card-body h4,
+.call-content h2,
+.footer-brand strong{
+  background:var(--sematec-green-gradient-text) !important;
+  -webkit-background-clip:text !important;
+  background-clip:text !important;
+  color:transparent !important;
+  -webkit-text-fill-color:transparent !important;
+}
+
+.topic-active,
+.topics-wrap .topic.topic-active{
+  background:#0b2d1b !important;
+  color:#fff !important;
+  box-shadow:0 14px 30px rgba(13,96,56,.22) !important;
+}
+
+.focus-card,
+.act-card .act-media,
+.price-top,
+.registration-hero,
+.call-hero,
+.talk-page .call-hero{
+  background:var(--sematec-green-gradient) !important;
+}
+
+.act-card::before{
+  background:
+    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
+    url('../img/sematec-hero-meadow.png') center 60% / cover no-repeat !important;
+}
+.act-cyan::before{
+  background:
+    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
+    url('../img/atividade-minicursos-bg.webp') center 55% / cover no-repeat !important;
+}
+.act-amber::before{
+  background:
+    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
+    url('../img/atividade-artigos-bg.jpg') center 45% / cover no-repeat !important;
+}
+.act-rose::before{
+  background:
+    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
+    url('../img/atividade-workshops-bg.jpg') center 55% / cover no-repeat !important;
+}
+
+.call-hero.activity-violet::before{
+  background:
+    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
+    url('../img/sematec-hero-meadow.png') center 60% / cover no-repeat !important;
+}
+.call-hero.activity-cyan::before{
+  background:
+    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
+    url('../img/atividade-minicursos-bg.webp') center 55% / cover no-repeat !important;
+}
+.call-hero.activity-amber::before{
+  background:
+    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
+    url('../img/atividade-artigos-bg.jpg') center 45% / cover no-repeat !important;
+}
+.call-hero.activity-rose::before{
+  background:
+    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
+    url('../img/atividade-workshops-bg.jpg') center 55% / cover no-repeat !important;
+}
+
+/* Ajuste final de contraste dos botões sobre o verde escuro */
+.btn-glow,
+.hero-actions .btn-glow,
+.sub-link,
+.price-button,
+.act-more,
+.talk-more,
+#palestrantes .talk-more,
+#submissoes .sub-card:hover .sub-link,
+#inscricoes .ticket-action .price-button,
+.talk-page .call-side .btn-glow{
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+}
+
+#inscricoes .ticket-action .price-button{
+  background:var(--sematec-green-gradient-action) !important;
+  box-shadow:0 14px 34px rgba(15,164,78,.2) !important;
+}
+
+#inscricoes .ticket-action .price-button::before{
+  background:linear-gradient(135deg, rgba(146,237,95,.42), rgba(24,201,150,.3)) !important;
+}
+
+/* Ajuste final: preenchimento dos botoes no verde escuro SEMATEC */
+:root{
+  --sematec-green-gradient-action:linear-gradient(135deg, #0d6038 0%, #0fa44e 52%, #18c996 100%);
+}
+
+.btn-glow,
+.sub-link,
+.price-button,
+.act-more,
+.talk-more,
+#palestrantes .talk-more,
+#submissoes .sub-card:hover .sub-link,
+#inscricoes .ticket-action .price-button,
+.stab-active{
+  background:var(--sematec-green-gradient-action) !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  border-color:rgba(14,89,58,.18) !important;
+}
+
+.btn-glow::before,
+.btn-ghost::before,
+.hero-actions .btn-ghost::before,
+.call-side .btn-ghost::before,
+.nav-pill::before,
+.sub-link::before,
+.price-button::before,
+.act-more::before,
+.talk-more::before,
+#submissoes .sub-card:hover .sub-link::before,
+#inscricoes .ticket-action .price-button::before{
+  background:var(--sematec-green-gradient-action) !important;
+}
+
+.btn-glow:hover,
+.btn-ghost:hover,
+.hero-actions .btn-ghost:hover,
+.call-side .btn-ghost:hover,
+.nav-pill:hover,
+.sub-link:hover,
+.price-button:hover,
+.act-more:hover,
+.talk-more:hover,
+#submissoes .sub-card:hover .sub-link{
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  border-color:transparent !important;
+}
+
+/* Ajuste final dos horarios da programacao */
+.sched-grid{
+  grid-template-columns:78px repeat(4,minmax(0,1fr)) !important;
+  align-items:stretch !important;
+}
+
+.sched-time{
+  grid-column:1 !important;
+  align-self:start !important;
+  justify-self:end !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:auto !important;
+  min-width:58px !important;
+  height:32px !important;
+  min-height:0 !important;
+  padding:6px 10px !important;
+  margin:0 !important;
+  border-radius:999px !important;
+  background:rgba(8,38,27,.08) !important;
+  border:1px solid rgba(14,89,58,.12) !important;
+  box-shadow:none !important;
+  color:rgba(8,20,24,.7) !important;
+  font-size:.78rem !important;
+  font-weight:800 !important;
+  line-height:1 !important;
+  text-align:center !important;
+  font-variant-numeric:tabular-nums !important;
+}
+
+@media (max-width:900px){
+  .sched-time{
+    justify-self:start !important;
+    margin:12px 0 6px !important;
+  }
+}
+
+/* Botões/abas específicos que têm seletores mais fortes */
+#inscricoes .ticket-action .price-button,
+#submissoes .sub-link,
+#submissoes .sub-card:hover .sub-link,
+.sub-card.sub-full .sub-link,
+.sub-card.sub-short .sub-link,
+.sub-card.sub-cyan .sub-link,
+.stab-active{
+  background:var(--sematec-green-gradient-action) !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  border-color:rgba(14,89,58,.18) !important;
+  box-shadow:0 14px 34px rgba(15,164,78,.2) !important;
+}
+
+#inscricoes .ticket-action .price-button::before,
+#submissoes .sub-link::before,
+#submissoes .sub-card:hover .sub-link::before{
+  background:linear-gradient(135deg, rgba(146,237,95,.42), rgba(24,201,150,.3)) !important;
+}
+
+#submissoes .sub-card h3{
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  background:none !important;
+  text-shadow:0 14px 30px rgba(0,0,0,.18);
+}
+
+/* Ajuste final do titulo da secao Sobre */
+.about-title{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
+  gap:.04em !important;
+}
+
+.about-title .about-title-main,
+.about-title .about-title-sub{
+  display:block !important;
+  width:max-content !important;
+  max-width:100% !important;
+  background:var(--sematec-green-gradient-text) !important;
+  -webkit-background-clip:text !important;
+  background-clip:text !important;
+  color:transparent !important;
+  -webkit-text-fill-color:transparent !important;
+  line-height:.95 !important;
+}
+
+.about-title .about-title-lead{
+  font-size:.55em !important;
+  background:none !important;
+  color:var(--text) !important;
+  -webkit-text-fill-color:var(--text) !important;
+}
+
+.about-title .about-title-main{
+  font-size:1em !important;
+}
+
+.about-title .about-title-sub{
+  margin-top:.02em !important;
+  font-size:.72em !important;
+  letter-spacing:0 !important;
+}
+
+@media (max-width:700px){
+  .about-title .about-title-sub{
+    font-size:.68em !important;
+  }
+}
+
+/* Contraste final para fundos com o degradê verde escuro */
+.btn-glow,
+.hero-actions .btn-glow,
+.sub-link,
+.price-button,
+.act-more,
+.talk-more,
+#palestrantes .talk-more,
+#submissoes .sub-card:hover .sub-link,
+#inscricoes .ticket-action .price-button{
+  color:#fff !important;
+}
+
+.call-hero .call-kicker,
+.call-hero h1,
+.call-hero p,
+.registration-hero .call-kicker,
+.registration-hero h1,
+.registration-hero p,
+.focus-card,
+.focus-card h3,
+.focus-card p,
+.price-top,
+.price-top *,
+.registration-option::before,
+.activity-violet::before,
+.activity-cyan::before,
+.activity-amber::before,
+.activity-rose::before{
+  color:#fff !important;
+}
+
+.call-hero h1,
+.registration-hero h1,
+.focus-card h3,
+.price-top strong,
+.price-top span{
+  -webkit-text-fill-color:#fff !important;
+  text-shadow:0 16px 34px rgba(0,0,0,.22);
+}
 .talk-page .call-kicker{
   margin-bottom:14px !important;
   font-size:.68rem !important;
@@ -7270,22 +7661,12 @@ body{
   border-radius:28px;
   overflow:hidden;
   position:relative;
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.72), rgba(255,255,255,.88)),
-    linear-gradient(135deg, rgba(100,241,63,.2), rgba(20,200,255,.18) 48%, rgba(127,120,255,.16));
+  background:#fbfffd;
   border:1px solid rgba(14,89,58,.14);
-  box-shadow:0 28px 80px rgba(22,103,67,.12);
-}
-#inscricoes .ticket-experience::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background:
-    linear-gradient(90deg, rgba(14,89,58,.075) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(14,89,58,.055) 1px, transparent 1px);
-  background-size:42px 42px;
-  mask-image:linear-gradient(90deg, #000, transparent 78%);
+  box-shadow:
+    0 28px 80px rgba(22,103,67,.12),
+    inset 0 1px 0 rgba(255,255,255,.9),
+    inset 0 -18px 48px rgba(14,89,58,.035);
 }
 #inscricoes .ticket-copy,
 #inscricoes .ticket-action{
@@ -7312,11 +7693,31 @@ body{
 }
 #inscricoes .ticket-copy h3{
   margin:0 0 16px;
-  color:#061017;
-  font-size:clamp(2.4rem, 5vw, 5.2rem);
-  line-height:.95;
-  font-weight:850;
   letter-spacing:0;
+}
+#inscricoes .ticket-title{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:4px;
+}
+#inscricoes .ticket-title-main{
+  display:block;
+  background:linear-gradient(100deg, #197847 0%, #1fbc72 40%, #0eb7c5 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+  font-size:clamp(3rem, 6.8vw, 6.6rem);
+  line-height:.86;
+  font-weight:900;
+}
+#inscricoes .ticket-title-sub{
+  display:block;
+  color:#061017;
+  font-size:clamp(1.55rem, 3vw, 2.55rem);
+  line-height:1;
+  font-weight:850;
 }
 #inscricoes .ticket-copy p{
   max-width:680px;
@@ -7362,23 +7763,31 @@ body{
 }
 #inscricoes .ticket-action strong{
   margin:6px 0 12px;
-  color:#061017;
+  background:linear-gradient(100deg, #197847 0%, #1fbc72 40%, #0eb7c5 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
   font-size:clamp(2.2rem, 4vw, 3.4rem);
   line-height:1;
   font-weight:850;
 }
 #inscricoes .ticket-action p{
-  margin:0 0 22px;
+  margin:0;
   color:rgba(8,20,24,.62);
   font-size:.95rem;
   line-height:1.5;
 }
 #inscricoes .ticket-action .price-button{
-  margin-top:auto;
+  margin-top:24px;
   min-height:54px;
-  background:linear-gradient(135deg, var(--leaf), var(--cyan));
-  color:#031008;
+  background:#42d88f !important;
+  color:#031008 !important;
   font-size:.94rem;
+  box-shadow:0 14px 30px rgba(31,188,114,.22) !important;
+}
+#inscricoes .ticket-action .price-button::before{
+  background:rgba(255,255,255,.18) !important;
 }
 
 @media (max-width:860px){
@@ -7398,7 +7807,13 @@ body{
     border-radius:22px;
   }
   #inscricoes .ticket-copy h3{
-    font-size:2.55rem;
+    margin-bottom:18px;
+  }
+  #inscricoes .ticket-title-main{
+    font-size:3rem;
+  }
+  #inscricoes .ticket-title-sub{
+    font-size:1.45rem;
   }
   #inscricoes .ticket-points span{
     width:100%;
@@ -7524,4 +7939,947 @@ body{
   .call-hero.activity-rose{
     min-height:320px;
   }
+}
+
+/* Páginas de palestra: mantém só o degradê verde, sem foto desfocada */
+.talk-page .call-hero{
+  background:
+    radial-gradient(circle at 18% 18%, rgba(146,237,95,.32), transparent 34%),
+    radial-gradient(circle at 84% 12%, rgba(67,189,229,.26), transparent 32%),
+    linear-gradient(135deg, #0d6038 0%, #0fa44e 45%, #18c996 100%) !important;
+}
+.talk-page .call-hero::before,
+.talk-page .call-hero::after{
+  display:none !important;
+}
+.talk-page .call-hero .wrap{
+  max-width:920px !important;
+}
+.talk-page .call-hero h1{
+  max-width:900px !important;
+  font-size:clamp(2rem, 3.1vw, 3.2rem) !important;
+  line-height:1.12 !important;
+  margin-bottom:18px !important;
+}
+.talk-page .call-hero p{
+  font-size:1rem !important;
+  line-height:1.55 !important;
+}
+
+/* Padronização final: todos os degradês visíveis usam o verde SEMATEC */
+.btn-glow,
+.hero-actions .btn-glow,
+.sub-link,
+.price-button,
+.act-more,
+.talk-more,
+#palestrantes .talk-more,
+#submissoes .sub-card:hover .sub-link,
+.price-top,
+.registration-option::before,
+.activity-violet::before,
+.activity-cyan::before,
+.activity-amber::before,
+.activity-rose::before{
+  background:var(--sematec-green-gradient-action) !important;
+  color:#031008 !important;
+  border-color:rgba(14,89,58,.18) !important;
+  box-shadow:0 14px 34px rgba(15,164,78,.2) !important;
+}
+.btn-glow::before,
+.sub-link::before,
+.price-button::before,
+.act-more::before,
+.talk-more::before{
+  background:linear-gradient(135deg, rgba(146,237,95,.42), rgba(24,201,150,.3)) !important;
+}
+.hero-title em,
+.hero-floating-title em,
+.hero-year,
+.s-head h2 span,
+.topics-spotlight-word,
+#inscricoes .ticket-title-main,
+#inscricoes .ticket-action strong,
+#palestrantes .talk-feature-copy h3,
+#palestrantes .speaker-card-body h4,
+.call-content h2,
+.footer-brand strong{
+  background:var(--sematec-green-gradient-text) !important;
+  -webkit-background-clip:text !important;
+  background-clip:text !important;
+  color:transparent !important;
+  -webkit-text-fill-color:transparent !important;
+}
+.focus-card,
+.price-top,
+.registration-hero,
+.call-hero,
+.talk-page .call-hero{
+  background:var(--sematec-green-gradient) !important;
+}
+.act-card::before{
+  background:
+    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
+    url('../img/sematec-hero-meadow.png') center 60% / cover no-repeat !important;
+}
+.act-cyan::before{
+  background:
+    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
+    url('../img/atividade-minicursos-bg.webp') center 55% / cover no-repeat !important;
+}
+.act-amber::before{
+  background:
+    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
+    url('../img/atividade-artigos-bg.jpg') center 45% / cover no-repeat !important;
+}
+.act-rose::before{
+  background:
+    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
+    url('../img/atividade-workshops-bg.jpg') center 55% / cover no-repeat !important;
+}
+.call-hero.activity-violet::before{
+  background:
+    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
+    url('../img/sematec-hero-meadow.png') center 60% / cover no-repeat !important;
+}
+.call-hero.activity-cyan::before{
+  background:
+    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
+    url('../img/atividade-minicursos-bg.webp') center 55% / cover no-repeat !important;
+}
+.call-hero.activity-amber::before{
+  background:
+    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
+    url('../img/atividade-artigos-bg.jpg') center 45% / cover no-repeat !important;
+}
+.call-hero.activity-rose::before{
+  background:
+    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
+    url('../img/atividade-workshops-bg.jpg') center 55% / cover no-repeat !important;
+}
+
+/* Ajuste final de contraste dos botões sobre o verde escuro */
+.btn-glow,
+.hero-actions .btn-glow,
+.sub-link,
+.price-button,
+.act-more,
+.talk-more,
+#palestrantes .talk-more,
+#submissoes .sub-card:hover .sub-link,
+#inscricoes .ticket-action .price-button,
+.talk-page .call-side .btn-glow{
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+}
+
+#inscricoes .ticket-action .price-button{
+  background:var(--sematec-green-gradient-action) !important;
+  box-shadow:0 14px 34px rgba(15,164,78,.2) !important;
+}
+
+#inscricoes .ticket-action .price-button::before{
+  background:linear-gradient(135deg, rgba(146,237,95,.42), rgba(24,201,150,.3)) !important;
+}
+
+/* Ajuste final absoluto: preenchimento dos botoes no verde escuro SEMATEC */
+:root{
+  --sematec-green-gradient-action:linear-gradient(135deg, #0d6038 0%, #0fa44e 52%, #18c996 100%);
+}
+
+.btn-glow,
+.sub-link,
+.price-button,
+.act-more,
+.talk-more,
+#palestrantes .talk-more,
+#submissoes .sub-card:hover .sub-link,
+#inscricoes .ticket-action .price-button,
+.stab-active{
+  background:var(--sematec-green-gradient-action) !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  border-color:rgba(14,89,58,.18) !important;
+}
+
+.btn-glow::before,
+.btn-ghost::before,
+.hero-actions .btn-ghost::before,
+.call-side .btn-ghost::before,
+.nav-pill::before,
+.sub-link::before,
+.price-button::before,
+.act-more::before,
+.talk-more::before,
+#submissoes .sub-card:hover .sub-link::before,
+#inscricoes .ticket-action .price-button::before{
+  background:var(--sematec-green-gradient-action) !important;
+}
+
+.btn-glow:hover,
+.btn-ghost:hover,
+.hero-actions .btn-ghost:hover,
+.call-side .btn-ghost:hover,
+.nav-pill:hover,
+.sub-link:hover,
+.price-button:hover,
+.act-more:hover,
+.talk-more:hover,
+#submissoes .sub-card:hover .sub-link{
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  border-color:transparent !important;
+}
+
+/* Ajuste final absoluto: icones e barras no degradê verde escuro */
+.about-feature-icon,
+.focus-icon,
+.sp-avatar,
+.local-icon,
+.org-drawer summary::after{
+  background:var(--sematec-green-gradient-action) !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  border-color:rgba(14,89,58,.18) !important;
+  box-shadow:0 14px 30px rgba(13,96,56,.2) !important;
+}
+
+.about-feature-icon svg,
+.focus-icon svg,
+.sp-avatar svg,
+.local-icon svg{
+  color:#fff !important;
+  stroke:currentColor !important;
+}
+
+.sub-gradient,
+.price-top::before,
+.registration-hero::before,
+.registration-option::before,
+.call-full::before,
+.call-short::before,
+.call-course::before{
+  background:var(--sematec-green-gradient) !important;
+}
+
+.sub-gradient::before,
+.sub-gradient::after,
+.price-top::after,
+.registration-hero::after,
+.registration-option::after{
+  background:
+    radial-gradient(circle at 20% 24%, rgba(255,255,255,.2), transparent 20%),
+    linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.1)) !important;
+}
+
+/* Ajuste final absoluto: barras finas dos cards no verde escuro */
+.speaker-card::before,
+.local-info::before,
+.org-card::before,
+.sponsor-slot::before,
+.price-card::before,
+.about-copy h2::after{
+  background:var(--sematec-green-gradient-action) !important;
+  box-shadow:0 8px 18px rgba(13,96,56,.18) !important;
+}
+
+/* Ajuste final absoluto: ritmo vertical mais compacto entre secoes */
+.section,
+.section.about-section,
+.about-section,
+#atividades,
+#programacao,
+#submissoes,
+#palestrantes,
+#inscricoes,
+#local,
+[id="organização"],
+#organizacao,
+#parceiros{
+  padding-top:48px !important;
+  padding-bottom:48px !important;
+}
+
+.section-compact,
+#local,
+[id="organização"],
+#organizacao,
+#parceiros{
+  padding-top:40px !important;
+  padding-bottom:40px !important;
+}
+
+.s-head,
+#atividades .s-head,
+#programacao .s-head,
+#submissoes .s-head,
+#palestrantes .s-head,
+#inscricoes .s-head,
+#local .s-head,
+[id="organização"] .s-head,
+#organizacao .s-head,
+#parceiros .s-head{
+  margin-bottom:24px !important;
+}
+
+.about-showcase{
+  gap:38px !important;
+}
+
+.about-copy h2{
+  margin-bottom:38px !important;
+}
+
+.about-copy h2::after{
+  bottom:-20px !important;
+}
+
+.about-copy p{
+  margin-bottom:16px !important;
+}
+
+.acts-grid,
+.sub-grid,
+#palestrantes .talks-grid,
+.local-grid,
+.org-drawers,
+#parceiros .sponsors-grid{
+  margin-top:0 !important;
+}
+
+#submissoes .sub-grid{
+  margin-bottom:30px !important;
+}
+
+#parceiros .sponsors-carousel{
+  margin-bottom:12px !important;
+  padding-top:0 !important;
+  padding-bottom:8px !important;
+}
+
+#inscricoes .ticket-points{
+  margin-top:18px !important;
+}
+
+#inscricoes .ticket-action .price-button{
+  margin-top:18px !important;
+}
+
+.footer{
+  padding-top:24px !important;
+}
+
+@media (max-width:900px){
+  .section,
+  .section.about-section,
+  .about-section,
+  #atividades,
+  #programacao,
+  #submissoes,
+  #palestrantes,
+  #inscricoes,
+  #local,
+  [id="organização"],
+  #organizacao,
+  #parceiros{
+    padding-top:38px !important;
+    padding-bottom:38px !important;
+  }
+
+  .s-head,
+  #atividades .s-head,
+  #programacao .s-head,
+  #submissoes .s-head,
+  #palestrantes .s-head,
+  #inscricoes .s-head,
+  #local .s-head,
+  [id="organização"] .s-head,
+  #organizacao .s-head,
+  #parceiros .s-head{
+    margin-bottom:20px !important;
+  }
+
+  .about-showcase{
+    gap:28px !important;
+  }
+
+  .about-copy h2{
+    margin-bottom:34px !important;
+  }
+}
+
+/* Ajuste final absoluto: experiencia mobile */
+@media (max-width:1024px){
+  html,
+  body{
+    width:100% !important;
+    overflow-x:hidden !important;
+  }
+
+  .wrap,
+  .nav-inner{
+    width:100% !important;
+    max-width:none !important;
+    padding-left:22px !important;
+    padding-right:22px !important;
+  }
+
+  .nav{
+    padding:10px 0 !important;
+  }
+
+  .nav-logo-img{
+    width:156px !important;
+    height:50px !important;
+  }
+
+  .nav-burger{
+    display:flex !important;
+    width:44px !important;
+    height:44px !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:6px !important;
+    border:1px solid rgba(14,89,58,.14) !important;
+    border-radius:999px !important;
+    background:rgba(255,255,255,.72) !important;
+    box-shadow:0 12px 28px rgba(13,96,56,.12) !important;
+  }
+
+  .nav-burger span{
+    width:18px !important;
+    height:2px !important;
+    min-width:0 !important;
+    padding:0 !important;
+    flex:0 0 auto !important;
+    border-radius:999px !important;
+    background:#0d6038 !important;
+  }
+
+  .nav-links{
+    position:fixed !important;
+    top:0 !important;
+    right:0 !important;
+    z-index:1001 !important;
+    width:min(82vw, 320px) !important;
+    height:100dvh !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    justify-content:flex-start !important;
+    gap:10px !important;
+    padding:86px 22px 28px !important;
+    background:rgba(251,255,249,.96) !important;
+    border-left:1px solid rgba(14,89,58,.14) !important;
+    box-shadow:-24px 0 60px rgba(13,96,56,.16) !important;
+    -webkit-backdrop-filter:blur(20px) !important;
+    backdrop-filter:blur(20px) !important;
+    transform:translateX(105%) !important;
+    transition:transform .28s var(--ease) !important;
+  }
+
+  .nav-links.open{
+    transform:translateX(0) !important;
+  }
+
+  .nav-links a{
+    display:flex !important;
+    min-height:46px !important;
+    align-items:center !important;
+    padding:0 14px !important;
+    border-radius:12px !important;
+    color:#0d6038 !important;
+    font-size:1rem !important;
+    font-weight:800 !important;
+    background:rgba(255,255,255,.62) !important;
+    border:1px solid rgba(14,89,58,.1) !important;
+    white-space:normal !important;
+  }
+
+  .hero{
+    min-height:100svh !important;
+  }
+
+  .hero-video-stage,
+  .hero-video{
+    min-height:100% !important;
+  }
+
+  .hero-video{
+    object-position:center center !important;
+  }
+
+  .hero-body{
+    width:100% !important;
+    min-height:100svh !important;
+    padding:96px 22px 72px !important;
+    text-align:center !important;
+  }
+
+  .hero-copy{
+    max-width:620px !important;
+  }
+
+  .hero-eyebrow{
+    max-width:100% !important;
+    white-space:normal !important;
+    font-size:.74rem !important;
+    line-height:1.25 !important;
+  }
+
+  .hero-title,
+  .hero-floating-title{
+    max-width:100% !important;
+    font-size:clamp(3.05rem, 12vw, 5.2rem) !important;
+    line-height:.92 !important;
+    overflow-wrap:normal !important;
+  }
+
+  .hero-sub{
+    max-width:560px !important;
+    font-size:1rem !important;
+    line-height:1.58 !important;
+  }
+
+  .hero-actions{
+    justify-content:center !important;
+    gap:12px !important;
+  }
+
+  .hero-actions .btn-glow,
+  .hero-actions .btn-ghost{
+    min-height:52px !important;
+    padding:14px 24px !important;
+    font-size:.96rem !important;
+  }
+
+  .about-showcase,
+  .local-grid,
+  #inscricoes .ticket-experience,
+  #palestrantes .talk-feature{
+    grid-template-columns:1fr !important;
+  }
+
+  .about-copy{
+    max-width:760px !important;
+  }
+
+  .about-feature-grid,
+  .acts-grid,
+  .sub-grid,
+  #palestrantes .talks-grid,
+  .org-member-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+
+  #programacao .wrap,
+  #atividades .wrap,
+  #palestrantes .wrap{
+    max-width:none !important;
+  }
+
+  .sched-body{
+    overflow:hidden !important;
+  }
+
+  .sched-grid{
+    display:block !important;
+  }
+
+  .sched-col-head{
+    display:none !important;
+  }
+
+  .sched-time{
+    display:inline-flex !important;
+    width:auto !important;
+    margin:14px 0 7px !important;
+  }
+
+  .sched-cell,
+  .sched-banner{
+    display:block !important;
+    width:100% !important;
+    margin-bottom:8px !important;
+    padding:12px 14px !important;
+  }
+
+  #palestrantes .talk-feature-image{
+    height:260px !important;
+    min-height:260px !important;
+  }
+
+  #palestrantes .talk-feature-copy{
+    padding:22px 22px 70px !important;
+  }
+
+  #inscricoes .ticket-experience{
+    gap:22px !important;
+    padding:28px !important;
+  }
+
+  #inscricoes .ticket-action{
+    min-height:0 !important;
+  }
+
+  .local-map{
+    height:300px !important;
+  }
+}
+
+@media (max-width:700px){
+  .wrap,
+  .nav-inner{
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+
+  .section,
+  .section.about-section,
+  .about-section,
+  #atividades,
+  #programacao,
+  #submissoes,
+  #palestrantes,
+  #inscricoes,
+  #local,
+  [id="organização"],
+  #organizacao,
+  #parceiros{
+    padding-top:34px !important;
+    padding-bottom:34px !important;
+  }
+
+  .s-head{
+    max-width:100% !important;
+  }
+
+  .s-head h2,
+  .about-copy h2{
+    font-size:clamp(1.9rem, 10vw, 2.7rem) !important;
+    line-height:1.06 !important;
+  }
+
+  .s-head .s-desc,
+  .about-copy p{
+    font-size:.95rem !important;
+    line-height:1.58 !important;
+  }
+
+  .hero-body{
+    padding:88px 18px 64px !important;
+  }
+
+  .hero-title,
+  .hero-floating-title{
+    font-size:clamp(2.75rem, 15vw, 4.1rem) !important;
+    margin-bottom:18px !important;
+  }
+
+  .hero-sub{
+    font-size:.96rem !important;
+    margin-bottom:22px !important;
+  }
+
+  .hero-actions{
+    width:100% !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+  }
+
+  .hero-actions .btn-glow,
+  .hero-actions .btn-ghost{
+    width:100% !important;
+    max-width:none !important;
+    justify-content:center !important;
+  }
+
+  .about-feature-grid,
+  .acts-grid,
+  .sub-grid,
+  #palestrantes .talks-grid,
+  .org-member-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .about-feature-card{
+    padding:22px !important;
+    border-radius:18px !important;
+  }
+
+  .about-feature-icon{
+    width:52px !important;
+    height:52px !important;
+    margin-bottom:16px !important;
+  }
+
+  .act-card{
+    min-height:260px !important;
+    padding:132px 20px 70px !important;
+  }
+
+  #submissoes .sub-card{
+    min-height:0 !important;
+    padding:132px 22px 24px !important;
+  }
+
+  .topics-spotlight{
+    min-height:52px !important;
+    margin-bottom:14px !important;
+  }
+
+  .topics-spotlight-word{
+    font-size:clamp(1.35rem, 8vw, 2rem) !important;
+    text-align:center !important;
+  }
+
+  .topics-wrap{
+    gap:8px !important;
+  }
+
+  .topic{
+    font-size:.78rem !important;
+    padding:7px 11px !important;
+  }
+
+  .sched-tabs{
+    width:100% !important;
+    display:grid !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:6px !important;
+  }
+
+  .stab{
+    width:100% !important;
+    min-width:0 !important;
+    max-width:none !important;
+    padding:9px 10px !important;
+    font-size:.9rem !important;
+  }
+
+  #palestrantes .talk-feature-image{
+    height:220px !important;
+    min-height:220px !important;
+  }
+
+  #palestrantes .talk-feature-copy h3{
+    font-size:1.45rem !important;
+  }
+
+  #palestrantes .speaker-photo{
+    height:190px !important;
+  }
+
+  #inscricoes .ticket-experience{
+    padding:22px !important;
+    border-radius:20px !important;
+  }
+
+  #inscricoes .ticket-title-main{
+    font-size:clamp(2.9rem, 15vw, 4.6rem) !important;
+  }
+
+  #inscricoes .ticket-title-sub{
+    font-size:clamp(1.35rem, 7vw, 2rem) !important;
+  }
+
+  #inscricoes .ticket-points span{
+    width:100% !important;
+    justify-content:center !important;
+  }
+
+  #inscricoes .ticket-action{
+    padding:22px !important;
+  }
+
+  #inscricoes .ticket-action strong{
+    font-size:2.35rem !important;
+  }
+
+  .local-detail{
+    align-items:flex-start !important;
+    padding:16px !important;
+  }
+
+  .local-icon{
+    flex:0 0 44px !important;
+    width:44px !important;
+    height:44px !important;
+  }
+
+  .local-map{
+    height:260px !important;
+  }
+
+  .local-map-panel{
+    left:14px !important;
+    right:14px !important;
+    bottom:14px !important;
+    padding:16px !important;
+  }
+
+  .local-map-panel strong{
+    font-size:1.25rem !important;
+  }
+
+  .org-drawer summary{
+    min-height:62px !important;
+    padding:0 14px !important;
+    gap:10px !important;
+  }
+
+  .org-drawer summary span{
+    font-size:.95rem !important;
+  }
+
+  .org-drawer summary strong{
+    font-size:.7rem !important;
+  }
+
+  .org-member-slot{
+    align-items:flex-start !important;
+    padding:12px !important;
+  }
+
+  .org-member-slot h4{
+    overflow-wrap:anywhere !important;
+  }
+
+  #parceiros .sponsors-carousel{
+    overflow:visible !important;
+    mask-image:none !important;
+    -webkit-mask-image:none !important;
+  }
+
+  #parceiros .sponsors-track{
+    width:100% !important;
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    animation:none !important;
+    gap:12px !important;
+  }
+
+  #parceiros .sponsor-slot[aria-hidden="true"]{
+    display:none !important;
+  }
+
+  #parceiros .sponsor-slot{
+    width:100% !important;
+    flex-basis:auto !important;
+    min-height:220px !important;
+  }
+
+  .foot-grid{
+    grid-template-columns:1fr !important;
+    gap:18px !important;
+  }
+}
+
+@media (max-width:420px){
+  .wrap,
+  .nav-inner{
+    padding-left:14px !important;
+    padding-right:14px !important;
+  }
+
+  .nav-logo-img{
+    width:136px !important;
+    height:44px !important;
+  }
+
+  .hero-title,
+  .hero-floating-title{
+    font-size:clamp(2.35rem, 14.5vw, 3.2rem) !important;
+  }
+
+  .hero-eyebrow{
+    font-size:.68rem !important;
+    padding:9px 12px !important;
+  }
+
+  .hero-sub{
+    font-size:.92rem !important;
+  }
+
+  .s-head h2,
+  .about-copy h2{
+    font-size:clamp(1.75rem, 10.5vw, 2.35rem) !important;
+  }
+
+  .sched-body{
+    padding:12px !important;
+  }
+
+  .sched-cell h4,
+  .sched-banner h4{
+    font-size:.88rem !important;
+  }
+
+  .sched-cell p,
+  .sched-banner p{
+    font-size:.78rem !important;
+  }
+}
+
+/* Ajuste final absoluto: UFMT 2026 em preto no titulo Sobre */
+.about-title .about-title-sub{
+  background:none !important;
+  color:#1a1f25 !important;
+  -webkit-text-fill-color:#1a1f25 !important;
+}
+
+/* Ajuste final absoluto: botões pretos com preenchimento em degradê no hover */
+.btn-glow,
+.hero-actions .btn-glow,
+.price-button,
+.act-more,
+.sub-link,
+#submissoes .sub-link,
+.sub-card.sub-full .sub-link,
+.sub-card.sub-short .sub-link,
+.sub-card.sub-cyan .sub-link,
+.talk-more,
+#palestrantes .talk-more,
+#inscricoes .ticket-action .price-button{
+  background:#071014 !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+}
+.talk-more,
+#palestrantes .talk-more{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  transition:transform .18s var(--ease), box-shadow .18s var(--ease), border-color .18s var(--ease);
+}
+.talk-more::before,
+#palestrantes .talk-more::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  border-radius:inherit;
+  background:var(--sematec-green-gradient-action) !important;
+  opacity:0;
+  transform:scaleX(.18);
+  transform-origin:left center;
+  transition:transform .22s var(--ease), opacity .16s linear;
+}
+.talk-more:hover,
+#palestrantes .talk-more:hover{
+  transform:translateY(-2px);
+  color:#fff !important;
+}
+.talk-more:hover::before,
+#palestrantes .talk-more:hover::before{
+  opacity:1;
+  transform:scaleX(1);
+}
+.org-drawer summary::after{
+  background:#071014 !important;
+  color:#fff !important;
+  transition:background .25s var(--ease), transform .24s var(--ease);
+}
+.org-drawer summary:hover::after{
+  background:var(--sematec-green-gradient-action) !important;
 }
