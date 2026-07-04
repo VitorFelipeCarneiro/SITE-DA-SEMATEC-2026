@@ -4167,9 +4167,6 @@ body{
   background:rgba(6,31,22,.34);
   border-color:rgba(255,255,255,.44);
 }
-.scroll-line{
-  background:linear-gradient(to bottom, transparent, rgba(6,80,84,.28));
-}
 
 @keyframes meadowCamera{
   0%{
@@ -5598,265 +5595,6 @@ body{
   display:none !important;
   content:none !important;
 }
-.hero-living-scene{
-  position:absolute;
-  inset:-6% -4% -7%;
-  overflow:hidden;
-  transform-origin:50% 78%;
-  background:
-    radial-gradient(circle at 74% 13%, rgba(255,255,225,.82) 0 5%, rgba(255,245,176,.34) 10%, transparent 22%),
-    linear-gradient(180deg, #5fbbef 0%, #95dcff 42%, #e7fbff 67%, #efffdc 100%);
-  animation:heroCameraClimb 26s ease-in-out infinite;
-}
-.hero-sky-glow{
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(ellipse at 42% 40%, rgba(255,255,255,.45) 0 16%, transparent 46%),
-    radial-gradient(ellipse at 52% 88%, rgba(182,255,142,.62) 0 18%, transparent 42%),
-    linear-gradient(90deg, rgba(255,255,255,.34), transparent 26%, transparent 74%, rgba(255,255,255,.22));
-  mix-blend-mode:screen;
-  pointer-events:none;
-}
-.hero-cloud{
-  position:absolute;
-  width:clamp(180px, 22vw, 390px);
-  height:clamp(58px, 7vw, 118px);
-  border-radius:999px;
-  background:rgba(255,255,255,.78);
-  filter:blur(.5px);
-  box-shadow:
-    42px 12px 28px rgba(255,255,255,.72),
-    92px 6px 40px rgba(255,255,255,.56),
-    -44px 18px 34px rgba(255,255,255,.58);
-  opacity:.72;
-  animation:cloudFloat var(--cloud-dur, 34s) linear infinite;
-}
-.hero-cloud::before,
-.hero-cloud::after{
-  content:'';
-  position:absolute;
-  border-radius:50%;
-  background:rgba(255,255,255,.82);
-}
-.hero-cloud::before{
-  left:12%;
-  bottom:18%;
-  width:38%;
-  height:112%;
-}
-.hero-cloud::after{
-  right:13%;
-  bottom:9%;
-  width:44%;
-  height:126%;
-}
-.cloud-a{
-  --cloud-dur:42s;
-  left:-12%;
-  top:28%;
-  transform:scale(1.05);
-}
-.cloud-b{
-  --cloud-dur:54s;
-  left:58%;
-  top:20%;
-  transform:scale(.82);
-  animation-delay:-20s;
-}
-.cloud-c{
-  --cloud-dur:46s;
-  left:72%;
-  top:55%;
-  transform:scale(.66);
-  opacity:.62;
-  animation-delay:-12s;
-}
-.hero-hill-layer{
-  position:absolute;
-  left:50%;
-  bottom:-20vh;
-  width:126vw;
-  min-width:1180px;
-  height:64vh;
-  border-radius:50% 50% 0 0 / 82% 82% 0 0;
-  transform:translateX(-50%);
-  overflow:hidden;
-}
-.hill-back{
-  bottom:-12vh;
-  width:148vw;
-  height:58vh;
-  opacity:.64;
-  background:
-    radial-gradient(ellipse at 54% 4%, rgba(236,255,166,.78), transparent 28%),
-    linear-gradient(135deg, #b7ef67 0%, #70cf47 48%, #268a33 100%);
-  filter:blur(1.6px) saturate(1.08);
-  animation:hillBreath 12s ease-in-out infinite;
-}
-.hill-front{
-  z-index:2;
-  background:
-    radial-gradient(ellipse at 45% 6%, rgba(241,255,128,.9), transparent 16%),
-    radial-gradient(ellipse at 34% 25%, rgba(153,226,43,.7), transparent 34%),
-    linear-gradient(145deg, #96e22d 0%, #41af31 42%, #0b6330 100%);
-  box-shadow:inset 0 26px 50px rgba(234,255,137,.26);
-}
-.hill-front::before{
-  content:'';
-  position:absolute;
-  inset:-14% -6% 0;
-  background:
-    repeating-linear-gradient(102deg, rgba(255,255,255,.22) 0 1px, transparent 1px 9px),
-    repeating-linear-gradient(78deg, rgba(5,86,31,.42) 0 2px, transparent 2px 13px),
-    radial-gradient(circle at 28% 30%, rgba(255,255,255,.18) 0 1px, transparent 2px);
-  background-size:100% 100%, 100% 100%, 34px 28px;
-  opacity:.86;
-  transform-origin:50% 90%;
-  animation:grassTextureWind 5.6s ease-in-out infinite alternate;
-}
-.hero-grass-field,
-.hero-flowers,
-.hero-butterflies,
-.hero-sun-motes{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-}
-.hero-grass-field{
-  z-index:4;
-  top:auto;
-  bottom:0;
-  height:47vh;
-  transform-origin:50% 100%;
-}
-.grass-blade{
-  position:absolute;
-  left:var(--x);
-  bottom:0;
-  width:var(--w);
-  height:var(--h);
-  border-radius:999px 999px 0 0;
-  background:linear-gradient(180deg, #e4ff77 0%, #4fc640 46%, #09622e 100%);
-  box-shadow:0 0 5px rgba(255,255,255,.16);
-  transform:rotate(var(--lean));
-  transform-origin:50% 100%;
-  animation:grassSway var(--dur) ease-in-out infinite alternate;
-  animation-delay:var(--delay);
-}
-.grass-blade[style*="--shade: 1"]{
-  background:linear-gradient(180deg, #c9f06b 0%, #3bb84c 52%, #086735 100%);
-}
-.grass-blade[style*="--shade: 2"]{
-  background:linear-gradient(180deg, #efff98 0%, #7bd549 44%, #187d28 100%);
-}
-.hero-flowers{
-  z-index:5;
-  top:auto;
-  bottom:0;
-  height:39vh;
-}
-.hero-flower{
-  position:absolute;
-  left:var(--x);
-  bottom:var(--y);
-  width:8px;
-  height:32px;
-  transform:scale(var(--s));
-  transform-origin:50% 100%;
-  background:linear-gradient(180deg, transparent 0 22%, #217d34 23% 100%);
-  animation:flowerSway var(--dur) ease-in-out infinite alternate;
-  animation-delay:var(--delay);
-}
-.hero-flower::before{
-  content:'';
-  position:absolute;
-  left:50%;
-  top:0;
-  width:15px;
-  height:15px;
-  border-radius:50%;
-  transform:translate(-50%, -42%);
-  background:
-    radial-gradient(circle, #ffe85a 0 22%, transparent 24%),
-    radial-gradient(circle at 50% 0%, var(--petal, #fff) 0 32%, transparent 34%),
-    radial-gradient(circle at 100% 50%, var(--petal, #fff) 0 32%, transparent 34%),
-    radial-gradient(circle at 50% 100%, var(--petal, #fff) 0 32%, transparent 34%),
-    radial-gradient(circle at 0% 50%, var(--petal, #fff) 0 32%, transparent 34%);
-  filter:drop-shadow(0 2px 2px rgba(15,80,36,.12));
-}
-.hero-flower[style*="--hue: 1"]::before{ --petal:#f9fff3; }
-.hero-flower[style*="--hue: 2"]::before{ --petal:#ffe9b8; }
-.hero-flower[style*="--hue: 3"]::before{ --petal:#c8f7ff; }
-.hero-butterflies{
-  z-index:6;
-}
-.butterfly{
-  position:absolute;
-  left:var(--x);
-  top:var(--y);
-  width:28px;
-  height:24px;
-  transform:scale(var(--s));
-  perspective:80px;
-  transform-style:preserve-3d;
-  animation:butterflyPath var(--dur) ease-in-out infinite;
-  animation-delay:var(--delay);
-  filter:drop-shadow(0 8px 8px rgba(22,78,53,.18));
-}
-.butterfly::before,
-.butterfly::after{
-  content:'';
-  position:absolute;
-  top:4px;
-  width:15px;
-  height:20px;
-  border-radius:88% 16% 78% 28%;
-  background:
-    radial-gradient(circle at 66% 28%, rgba(255,255,255,.8) 0 10%, transparent 12%),
-    radial-gradient(circle at 36% 68%, rgba(35,93,58,.28) 0 12%, transparent 14%),
-    linear-gradient(135deg, hsl(var(--hue), 90%, 58%), #1ed1b5 48%, #f8df45 100%);
-  transform-origin:100% 52%;
-  animation:wingFlap .46s ease-in-out infinite alternate;
-}
-.butterfly::before{
-  left:0;
-}
-.butterfly::after{
-  right:0;
-  transform-origin:0 52%;
-  transform:scaleX(-1);
-  animation-name:wingFlapRight;
-}
-.butterfly i{
-  position:absolute;
-  left:50%;
-  top:6px;
-  width:3px;
-  height:15px;
-  border-radius:999px;
-  transform:translateX(-50%);
-  background:#184631;
-}
-.butterfly-2,
-.butterfly-5{
-  opacity:.76;
-}
-.butterfly-3,
-.butterfly-7{
-  opacity:.88;
-}
-.hero-sun-motes{
-  z-index:3;
-  opacity:.36;
-  background:
-    radial-gradient(circle at 18% 26%, rgba(255,255,255,.9) 0 1px, transparent 2px),
-    radial-gradient(circle at 64% 34%, rgba(255,255,255,.86) 0 1px, transparent 2px),
-    radial-gradient(circle at 80% 66%, rgba(255,255,255,.78) 0 1px, transparent 2px),
-    radial-gradient(circle at 42% 75%, rgba(255,255,255,.9) 0 1px, transparent 2px);
-  background-size:88px 82px, 132px 116px, 154px 148px, 112px 128px;
-  animation:motesDrift 18s linear infinite;
-}
 .hero-body{
   position:relative !important;
   inset:auto !important;
@@ -5906,9 +5644,6 @@ body{
   color:rgba(25,42,39,.72) !important;
   text-shadow:0 12px 28px rgba(255,255,255,.52) !important;
 }
-.hero-actions{
-  justify-content:center !important;
-}
 .hero-actions .btn-ghost{
   color:#173c2d !important;
   background:rgba(255,255,255,.72) !important;
@@ -5921,67 +5656,8 @@ body{
   z-index:8 !important;
 }
 
-@keyframes heroCameraClimb{
-  0%{ transform:scale(1.02) translate3d(0, 0, 0); }
-  48%{ transform:scale(1.085) translate3d(0, -3.6%, 0); }
-  52%{ transform:scale(1.085) translate3d(0, -3.6%, 0); }
-  100%{ transform:scale(1.02) translate3d(0, 0, 0); }
-}
-@keyframes cloudFloat{
-  0%{ translate:-18vw 0; }
-  100%{ translate:118vw 0; }
-}
-@keyframes hillBreath{
-  0%,100%{ transform:translateX(-50%) scaleY(1); }
-  50%{ transform:translateX(-50%) scaleY(1.025); }
-}
-@keyframes grassTextureWind{
-  0%{ transform:skewX(-2deg) translateX(-1%); }
-  100%{ transform:skewX(2deg) translateX(1.2%); }
-}
-@keyframes grassSway{
-  0%{ transform:rotate(calc(var(--lean) - 7deg)); }
-  100%{ transform:rotate(calc(var(--lean) + 8deg)); }
-}
-@keyframes flowerSway{
-  0%{ transform:scale(var(--s)) rotate(-4deg); }
-  100%{ transform:scale(var(--s)) rotate(5deg); }
-}
-@keyframes butterflyPath{
-  0%{ transform:translate3d(-8vw, 2vh, 0) scale(var(--s)) rotate(-8deg); }
-  20%{ transform:translate3d(5vw, -4vh, 0) scale(var(--s)) rotate(8deg); }
-  45%{ transform:translate3d(15vw, 3vh, 0) scale(var(--s)) rotate(-4deg); }
-  70%{ transform:translate3d(28vw, -5vh, 0) scale(var(--s)) rotate(10deg); }
-  100%{ transform:translate3d(45vw, 1vh, 0) scale(var(--s)) rotate(-6deg); }
-}
-@keyframes wingFlap{
-  0%{ transform:rotateY(62deg) rotate(-12deg); }
-  100%{ transform:rotateY(12deg) rotate(10deg); }
-}
-@keyframes wingFlapRight{
-  0%{ transform:scaleX(-1) rotateY(62deg) rotate(-12deg); }
-  100%{ transform:scaleX(-1) rotateY(12deg) rotate(10deg); }
-}
-@keyframes motesDrift{
-  0%{ background-position:0 0, 0 0, 0 0, 0 0; }
-  100%{ background-position:88px -82px, -132px -116px, 154px -148px, -112px -128px; }
-}
 
 @media (max-width:768px){
-  .hero-living-scene{
-    inset:-5% -18% -10%;
-  }
-  .hero-hill-layer{
-    min-width:860px;
-    height:56vh;
-    bottom:-18vh;
-  }
-  .hero-grass-field{
-    height:37vh;
-  }
-  .hero-flowers{
-    height:28vh;
-  }
   .hero-body{
     padding:112px 20px 96px !important;
   }
@@ -5991,10 +5667,6 @@ body{
   }
   .hero-sub{
     font-size:.98rem !important;
-  }
-  .butterfly{
-    width:22px;
-    height:19px;
   }
 }
 
@@ -6012,20 +5684,6 @@ body{
   }
 }
 
-@media (prefers-reduced-motion:reduce){
-  .hero-living-scene,
-  .hero-cloud,
-  .hill-back,
-  .hill-front::before,
-  .grass-blade,
-  .hero-flower,
-  .butterfly,
-  .butterfly::before,
-  .butterfly::after,
-  .hero-sun-motes{
-    animation:none !important;
-  }
-}
 
 /* Hero simplificado: sem foto, layout em duas colunas */
 .hero{
@@ -6654,9 +6312,6 @@ body{
 }
 .hero::before,
 .hero::after{
-  display:none !important;
-}
-.hero-media{
   display:none !important;
 }
 .hero-video-stage{
@@ -7952,185 +7607,6 @@ body{
 .talk-page .call-hero::after{
   display:none !important;
 }
-.talk-page .call-hero .wrap{
-  max-width:920px !important;
-}
-.talk-page .call-hero h1{
-  max-width:900px !important;
-  font-size:clamp(2rem, 3.1vw, 3.2rem) !important;
-  line-height:1.12 !important;
-  margin-bottom:18px !important;
-}
-.talk-page .call-hero p{
-  font-size:1rem !important;
-  line-height:1.55 !important;
-}
-
-/* Padronização final: todos os degradês visíveis usam o verde SEMATEC */
-.btn-glow,
-.hero-actions .btn-glow,
-.sub-link,
-.price-button,
-.act-more,
-.talk-more,
-#palestrantes .talk-more,
-#submissoes .sub-card:hover .sub-link,
-.price-top,
-.registration-option::before,
-.activity-violet::before,
-.activity-cyan::before,
-.activity-amber::before,
-.activity-rose::before{
-  background:var(--sematec-green-gradient-action) !important;
-  color:#031008 !important;
-  border-color:rgba(14,89,58,.18) !important;
-  box-shadow:0 14px 34px rgba(15,164,78,.2) !important;
-}
-.btn-glow::before,
-.sub-link::before,
-.price-button::before,
-.act-more::before,
-.talk-more::before{
-  background:linear-gradient(135deg, rgba(146,237,95,.42), rgba(24,201,150,.3)) !important;
-}
-.hero-title em,
-.hero-floating-title em,
-.hero-year,
-.s-head h2 span,
-.topics-spotlight-word,
-#inscricoes .ticket-title-main,
-#inscricoes .ticket-action strong,
-#palestrantes .talk-feature-copy h3,
-#palestrantes .speaker-card-body h4,
-.call-content h2,
-.footer-brand strong{
-  background:var(--sematec-green-gradient-text) !important;
-  -webkit-background-clip:text !important;
-  background-clip:text !important;
-  color:transparent !important;
-  -webkit-text-fill-color:transparent !important;
-}
-.focus-card,
-.price-top,
-.registration-hero,
-.call-hero,
-.talk-page .call-hero{
-  background:var(--sematec-green-gradient) !important;
-}
-.act-card::before{
-  background:
-    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
-    url('../img/sematec-hero-meadow.png') center 60% / cover no-repeat !important;
-}
-.act-cyan::before{
-  background:
-    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
-    url('../img/atividade-minicursos-bg.webp') center 55% / cover no-repeat !important;
-}
-.act-amber::before{
-  background:
-    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
-    url('../img/atividade-artigos-bg.jpg') center 45% / cover no-repeat !important;
-}
-.act-rose::before{
-  background:
-    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
-    url('../img/atividade-workshops-bg.jpg') center 55% / cover no-repeat !important;
-}
-.call-hero.activity-violet::before{
-  background:
-    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
-    url('../img/sematec-hero-meadow.png') center 60% / cover no-repeat !important;
-}
-.call-hero.activity-cyan::before{
-  background:
-    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
-    url('../img/atividade-minicursos-bg.webp') center 55% / cover no-repeat !important;
-}
-.call-hero.activity-amber::before{
-  background:
-    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
-    url('../img/atividade-artigos-bg.jpg') center 45% / cover no-repeat !important;
-}
-.call-hero.activity-rose::before{
-  background:
-    linear-gradient(160deg, rgba(13,96,56,.38), rgba(24,201,150,.14)),
-    url('../img/atividade-workshops-bg.jpg') center 55% / cover no-repeat !important;
-}
-
-/* Ajuste final de contraste dos botões sobre o verde escuro */
-.btn-glow,
-.hero-actions .btn-glow,
-.sub-link,
-.price-button,
-.act-more,
-.talk-more,
-#palestrantes .talk-more,
-#submissoes .sub-card:hover .sub-link,
-#inscricoes .ticket-action .price-button,
-.talk-page .call-side .btn-glow{
-  color:#fff !important;
-  -webkit-text-fill-color:#fff !important;
-}
-
-#inscricoes .ticket-action .price-button{
-  background:var(--sematec-green-gradient-action) !important;
-  box-shadow:0 14px 34px rgba(15,164,78,.2) !important;
-}
-
-#inscricoes .ticket-action .price-button::before{
-  background:linear-gradient(135deg, rgba(146,237,95,.42), rgba(24,201,150,.3)) !important;
-}
-
-/* Ajuste final absoluto: preenchimento dos botoes no verde escuro SEMATEC */
-:root{
-  --sematec-green-gradient-action:linear-gradient(135deg, #0d6038 0%, #0fa44e 52%, #18c996 100%);
-}
-
-.btn-glow,
-.sub-link,
-.price-button,
-.act-more,
-.talk-more,
-#palestrantes .talk-more,
-#submissoes .sub-card:hover .sub-link,
-#inscricoes .ticket-action .price-button,
-.stab-active{
-  background:var(--sematec-green-gradient-action) !important;
-  color:#fff !important;
-  -webkit-text-fill-color:#fff !important;
-  border-color:rgba(14,89,58,.18) !important;
-}
-
-.btn-glow::before,
-.btn-ghost::before,
-.hero-actions .btn-ghost::before,
-.call-side .btn-ghost::before,
-.nav-pill::before,
-.sub-link::before,
-.price-button::before,
-.act-more::before,
-.talk-more::before,
-#submissoes .sub-card:hover .sub-link::before,
-#inscricoes .ticket-action .price-button::before{
-  background:var(--sematec-green-gradient-action) !important;
-}
-
-.btn-glow:hover,
-.btn-ghost:hover,
-.hero-actions .btn-ghost:hover,
-.call-side .btn-ghost:hover,
-.nav-pill:hover,
-.sub-link:hover,
-.price-button:hover,
-.act-more:hover,
-.talk-more:hover,
-#submissoes .sub-card:hover .sub-link{
-  color:#fff !important;
-  -webkit-text-fill-color:#fff !important;
-  border-color:transparent !important;
-}
-
 /* Ajuste final absoluto: icones e barras no degradê verde escuro */
 .about-feature-icon,
 .focus-icon,
@@ -8882,4 +8358,75 @@ body{
 }
 .org-drawer summary:hover::after{
   background:var(--sematec-green-gradient-action) !important;
+}
+
+/* Ajuste final absoluto: card "Participação Gratuita" - texto preto e botão direto no degradê */
+#inscricoes .ticket-action strong{
+  background:none !important;
+  color:#0a0f12 !important;
+  -webkit-text-fill-color:#0a0f12 !important;
+}
+#inscricoes .ticket-action .price-button{
+  background:var(--sematec-green-gradient-action) !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+}
+#inscricoes .ticket-action .price-button::before{
+  opacity:0 !important;
+}
+
+/* Ajuste final absoluto: remove a linha/borda que sobrava nos botões preenchidos */
+.btn-glow,
+.hero-actions .btn-glow,
+.price-button,
+#inscricoes .ticket-action .price-button,
+.act-more,
+.sub-link,
+#submissoes .sub-link,
+#submissoes .sub-card:hover .sub-link,
+.sub-card.sub-full .sub-link,
+.sub-card.sub-short .sub-link,
+.sub-card.sub-cyan .sub-link,
+.talk-more,
+#palestrantes .talk-more{
+  border:none !important;
+}
+.org-drawer summary::after{
+  box-shadow:none !important;
+}
+
+/* Ajuste final absoluto: "Saiba mais" das palestras direto no degradê, sem efeito de preenchimento */
+.talk-more,
+#palestrantes .talk-more{
+  background:var(--sematec-green-gradient-action) !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+}
+.talk-more::before,
+#palestrantes .talk-more::before{
+  opacity:0 !important;
+}
+
+/* Ajuste final absoluto: "Voltar às palestras/chamadas/atividades" direto no degradê, sem efeito de preenchimento */
+.call-side .btn-glow{
+  background:var(--sematec-green-gradient-action) !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  border:none !important;
+}
+.call-side .btn-glow::before{
+  opacity:0 !important;
+}
+
+/* Ajuste final absoluto: "Inscreva-se" do hero direto no degradê, sem efeito de preenchimento */
+.btn-glow,
+.hero-actions .btn-glow{
+  background:var(--sematec-green-gradient-action) !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  border:none !important;
+}
+.btn-glow::before,
+.hero-actions .btn-glow::before{
+  opacity:0 !important;
 }
