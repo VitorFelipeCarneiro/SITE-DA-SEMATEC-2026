@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260704-cleanup">
+  <link rel="stylesheet" href="css/style.css?v=20260707-mobile-menu-close">
 </head>
 <body>
 
@@ -22,10 +22,13 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo" aria-label="SEMATEC UFMT 2026">
-        <img class="nav-logo-img nav-logo-img-white" src="img/sematec-logo-dark.png" alt="SEMATEC UFMT 2026">
-        <img class="nav-logo-img nav-logo-img-black" src="img/sematec-logo-light.png" alt="SEMATEC UFMT 2026">
+        <img class="nav-logo-img nav-logo-img-white" src="img/sematec-logo-dark.png?v=ufmt-20260707" alt="SEMATEC UFMT 2026">
+        <img class="nav-logo-img nav-logo-img-black" src="img/sematec-logo-light.png?v=ufmt-20260707" alt="SEMATEC UFMT 2026">
       </a>
       <div class="nav-links" id="navLinks">
+        <button class="nav-close" id="navClose" type="button" aria-label="Fechar menu">
+          <span aria-hidden="true">×</span>
+        </button>
         <a href="#sobre">Sobre</a>
         <a href="#atividades">Atividades</a>
         <a href="#programacao">Programação</a>
@@ -33,7 +36,7 @@
         <a href="#submissoes">Submissões</a>
         <a href="#organização">Organização</a>
       </div>
-      <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <button class="nav-burger" id="navBurger" type="button" aria-label="Abrir menu" aria-controls="navLinks" aria-expanded="false">
         <span></span><span></span>
       </button>
     </div>
@@ -992,7 +995,7 @@
       <div class="foot-grid">
         <div class="foot-brand">
           <div class="nav-logo foot-logo">
-            <img class="nav-logo-img footer-logo-img" src="img/sematec-logo-light.png" alt="SEMATEC UFMT 2026">
+            <img class="nav-logo-img footer-logo-img" src="img/sematec-logo-light.png?v=ufmt-20260707" alt="SEMATEC UFMT 2026">
           </div>
           <p>Semana Acadêmica de Tecnologia, Computação e Inovação</p>
           <p class="foot-small">Cuiabá · 14 a 16 de setembro de 2026</p>
@@ -1035,6 +1038,10 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=20260704-cleanup"></script>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Voltar ao topo da página" aria-hidden="true" tabindex="-1">
+    <span aria-hidden="true">↑</span>
+  </button>
+
+  <script src="js/main.js?v=20260707-mobile-menu-close"></script>
 </body>
 </html>

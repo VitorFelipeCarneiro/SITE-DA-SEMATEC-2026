@@ -61,19 +61,48 @@ if (nav) {
   }, { passive: true });
 }
 
+// ── Voltar ao topo: atalho acessivel para telas menores ──
+const backToTop = $('backToTop');
+if (backToTop) {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const setBackToTopState = () => {
+    const isVisible = window.scrollY > 420;
+    backToTop.classList.toggle('is-visible', isVisible);
+    backToTop.setAttribute('aria-hidden', String(!isVisible));
+    backToTop.tabIndex = isVisible ? 0 : -1;
+  };
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: reduceMotion.matches ? 'auto' : 'smooth'
+    });
+  });
+
+  window.addEventListener('scroll', setBackToTopState, { passive: true });
+  setBackToTopState();
+}
+
 // ── Mobile menu ──
 const burger = $('navBurger');
 const links  = $('navLinks');
+const navClose = $('navClose');
 if (burger && links) {
+  const setMenuState = isOpen => {
+    burger.classList.toggle('open', isOpen);
+    links.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', String(isOpen));
+  };
+
   const closeMenu = () => {
-    burger.classList.remove('open');
-    links.classList.remove('open');
+    setMenuState(false);
   };
 
   burger.addEventListener('click', () => {
-    burger.classList.toggle('open');
-    links.classList.toggle('open');
+    setMenuState(!links.classList.contains('open'));
   });
+
+  if (navClose) navClose.addEventListener('click', closeMenu);
 
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
